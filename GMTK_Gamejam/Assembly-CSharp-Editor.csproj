@@ -1013,6 +1013,9 @@
     <Reference Include="Unity.VisualScripting.State">
       <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.AI.Navigation.Editor.ConversionSystem">
       <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.ConversionSystem.dll</HintPath>
     </Reference>

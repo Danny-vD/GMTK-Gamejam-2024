@@ -10,29 +10,6 @@ namespace ECS.Systems
 	[BurstCompile, RequireMatchingQueriesForUpdate]
 	public partial struct CubeSpawnerSystem : ISystem
 	{
-		// [BurstCompile]
-		// public void OnUpdate(ref SystemState state)
-		// {
-		// 	if (!SystemAPI.TryGetSingletonEntity<CubeSpawnerComponent>(out Entity cubeSpawnerEntity))
-		// 	{
-		// 		return;
-		// 	}
-		//
-		// 	RefRW<CubeSpawnerComponent> spawner = SystemAPI.GetComponentRW<CubeSpawnerComponent>(cubeSpawnerEntity);
-		//
-		// 	EntityCommandBuffer commandBuffer = new EntityCommandBuffer(Allocator.Temp);
-		//
-		// 	if (spawner.ValueRO.NextSpawnTime < SystemAPI.Time.ElapsedTime)
-		// 	{
-		// 		Entity entity = commandBuffer.Instantiate(spawner.ValueRO.Prefab);
-		//
-		// 		commandBuffer.AddComponent(entity, new MovementComponent() { Direction = GetRandomDirection(ref state), Speed = spawner.ValueRO.MovementSpeed });
-		// 		spawner.ValueRW.NextSpawnTime = (float)SystemAPI.Time.ElapsedTime + spawner.ValueRO.SpawnRate;
-		//
-		// 		commandBuffer.Playback(state.EntityManager);
-		// 	}
-		// }
-
 		private EntityQuery spawnersQuery;
 		
 		[BurstCompile]
@@ -42,7 +19,7 @@ namespace ECS.Systems
 			state.RequireForUpdate(spawnersQuery);
 		}
 
-		//[BurstCompile]
+		[BurstCompile]
 		public void OnUpdate(ref SystemState state)
 		{
 			foreach (Entity spawnerEntity in spawnersQuery.ToEntityArray(Allocator.TempJob))
@@ -60,7 +37,6 @@ namespace ECS.Systems
 					Entity spawnedEntity = commandBuffer.Instantiate(spawner.ValueRO.Prefab);
 					
 					commandBuffer.SetComponent(spawnedEntity, LocalTransform.FromPosition(spawnerTransform.ValueRO.Position));
-					//commandBuffer.SetComponent(spawnedEntity, LocalTransform.FromPosition(spawner.ValueRO.SpawnPos));
 
 					commandBuffer.AddComponent(spawnedEntity, new MovementComponent() { Direction = GetRandomDirection(ref state), Speed = spawner.ValueRO.MovementSpeed });
 					spawner.ValueRW.NextSpawnTime = (float)SystemAPI.Time.ElapsedTime + spawner.ValueRO.SpawnRate;

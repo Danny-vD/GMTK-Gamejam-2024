@@ -7,17 +7,24 @@ using Unity.Transforms;
 
 namespace ECS.Systems
 {
-	[BurstCompile]
+	[BurstCompile, RequireMatchingQueriesForUpdate]
 	public partial struct MovementSystem : ISystem
 	{
+		private EntityQuery movementEntityQuery;
+		
+		[BurstCompile]
+		public void OnCreate(ref SystemState state)
+		{
+			movementEntityQuery = state.GetEntityQuery(ComponentType.ReadOnly<MovementComponent>());
+			state.RequireForUpdate(movementEntityQuery);
+		}
+
 		[BurstCompile]
 		public void OnUpdate(ref SystemState state)
 		{
 			EntityManager entityManager = state.EntityManager;
-
-			NativeArray<Entity> allEntities = entityManager.GetAllEntities(Allocator.Temp);
 			
-			foreach (Entity entity in allEntities)
+			foreach (Entity entity in movementEntityQuery.ToEntityArray(Allocator.Temp))
 			{
 				if (!entityManager.HasComponent<MovementComponent>(entity))
 				{
@@ -26,7 +33,7 @@ namespace ECS.Systems
 
 				MovementComponent movementComponent = entityManager.GetComponentData<MovementComponent>(entity);
 				LocalTransform localTransform = entityManager.GetComponentData<LocalTransform>(entity);
-
+				
 				float3 moveDirection = SystemAPI.Time.DeltaTime * movementComponent.Speed * movementComponent.Direction;
 
 				localTransform.Position += moveDirection;
