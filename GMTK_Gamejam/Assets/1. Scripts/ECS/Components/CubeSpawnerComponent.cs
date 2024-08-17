@@ -9,7 +9,7 @@ namespace ECS.Components
 		
 		public float3 SpawnPos;
 
-		public double NextSpawnTime;
+		public double NextSpawnTime; // Set from the system
 		public double SpawnRate;
 
 		public float MovementSpeed;
