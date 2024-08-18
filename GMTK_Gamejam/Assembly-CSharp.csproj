@@ -63,6 +63,9 @@
     <Compile Include="Assets\1. Scripts\ECS\Systems\CubeSpawnerSystem.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Components\MovementComponent.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Components\CubeSpawnerComponent.cs" />
+    <Compile Include="Assets\1. Scripts\ECS\Components\Aspects\MovementAspect.cs" />
+    <Compile Include="Assets\1. Scripts\ECS\Systems\Jobs\MoveEntityJob.cs" />
+    <Compile Include="Assets\1. Scripts\ECS\Authoring\Bakers\CubeSpawnerBaker.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Components\WeightComponent.cs" />
     <Compile Include="Assets\1. Scripts\DebugInfo\UI\DebugTextManager.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Systems\WeightSystem.cs" />

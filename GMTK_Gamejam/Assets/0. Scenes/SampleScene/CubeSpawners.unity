@@ -149,7 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Prefab: {fileID: 6477526037547714579, guid: cf6bc452e4798c6468f028d6dbfb29a8, type: 3}
   Spawnrate: 0.01
-  MovementSpeed: 10
+  MovementSpeed: 2
 --- !u!4 &631373327
 Transform:
   m_ObjectHideFlags: 0
@@ -211,7 +211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Prefab: {fileID: 6477526037547714579, guid: cf6bc452e4798c6468f028d6dbfb29a8, type: 3}
   Spawnrate: 0.01
-  MovementSpeed: 10
+  MovementSpeed: 2
 --- !u!1 &1218054268
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,7 +243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Prefab: {fileID: 6477526037547714579, guid: cf6bc452e4798c6468f028d6dbfb29a8, type: 3}
   Spawnrate: 0.01
-  MovementSpeed: 10
+  MovementSpeed: 2
 --- !u!4 &1218054270
 Transform:
   m_ObjectHideFlags: 0
@@ -290,7 +290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Prefab: {fileID: 6477526037547714579, guid: cf6bc452e4798c6468f028d6dbfb29a8, type: 3}
   Spawnrate: 0.01
-  MovementSpeed: 10
+  MovementSpeed: 2
 --- !u!4 &1567093720
 Transform:
   m_ObjectHideFlags: 0
