@@ -3,7 +3,6 @@ using ECS.Components.Aspects;
 using Unity.Burst;
 using Unity.Entities;
 using Unity.Mathematics;
-using Unity.Transforms;
 
 namespace ECS.Systems.Jobs
 {
@@ -11,24 +10,21 @@ namespace ECS.Systems.Jobs
 	public partial struct MoveEntityJob : IJobEntity
 	{
 		public float DeltaTime;
+		public EntityCommandBuffer.ParallelWriter EntityCommandBuffer;
 		
 		[BurstCompile]
-		private void Execute(MovementAspect movementAspect)
+		private void Execute(MovementAspect movementAspect, [EntityIndexInQuery] int sortkey)
 		{
-			// float3 moveDirection = DeltaTime * movementComponent.Speed * movementComponent.Direction;
-			//
-			// localTransform.Position += moveDirection;
-			// 	
-			// if (movementComponent.Speed > 0)
-			// {
-			// 	movementComponent.Speed -= 1 * SystemAPI.Time.DeltaTime;
-			// }
-			// else
-			// {
-			// 	movementComponent.Speed = 0;
-			// }
-			// 	
-			// entityManager.SetComponentData(entity, movementComponent);
+			MovementComponent movementComponent = movementAspect.movementComponentRW.ValueRO;
+			float3 moveDirection = DeltaTime * movementComponent.Speed * movementComponent.Direction;
+
+			movementAspect.Translate(moveDirection);
+			movementAspect.movementComponentRW.ValueRW.Speed -= 1 * DeltaTime;
+
+			if (movementAspect.movementComponentRW.ValueRO.Speed <= 0)
+			{
+				EntityCommandBuffer.RemoveComponent<MovementComponent>(sortkey, movementAspect.Entity);
+			}
 		}
 	}
 }

@@ -16,6 +16,8 @@ namespace ECS.Systems
 		[BurstCompile]
 		public void OnCreate(ref SystemState state)
 		{
+			state.RequireForUpdate<EndSimulationEntityCommandBufferSystem.Singleton>();
+			
 			movementEntityQuery = state.GetEntityQuery(ComponentType.ReadOnly<MovementComponent>());
 			state.RequireForUpdate(movementEntityQuery);
 		}
@@ -52,10 +54,12 @@ namespace ECS.Systems
 		public void OnUpdate(ref SystemState state)
 		{
 			float deltaTime = SystemAPI.Time.DeltaTime; // Supposedly a bug when doing this directly?
+			EndSimulationEntityCommandBufferSystem.Singleton entityCommandBufferSingleton = SystemAPI.GetSingleton<EndSimulationEntityCommandBufferSystem.Singleton>();
 			
 			new MoveEntityJob()
 			{
 				DeltaTime = deltaTime,
+				EntityCommandBuffer = entityCommandBufferSingleton.CreateCommandBuffer(state.WorldUnmanaged).AsParallelWriter(),
 			}.ScheduleParallel();
 		}
 	}

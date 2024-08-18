@@ -6,19 +6,19 @@ namespace ECS.Components.Aspects
 {
 	public readonly partial struct MovementAspect : IAspect
 	{
-		public MovementComponent MovementComponentRO => movementComponentReference.ValueRO;
-		public LocalTransform LocalTransformRO => localTransformReference.ValueRO;
-		
 		public readonly Entity Entity;
 
-		private readonly RefRW<LocalTransform> localTransformReference;
-		private readonly RefRW<MovementComponent> movementComponentReference;
+		public readonly RefRW<LocalTransform> localTransformRW;
+		public readonly RefRW<MovementComponent> movementComponentRW;
 
-		public void Translate(float3 delta, float speedDecrease)
+		public void Translate(float3 delta)
 		{
-			localTransformReference.ValueRW.Position += delta;
+			MovementComponent movementComponent = movementComponentRW.ValueRW;
 
-			movementComponentReference.ValueRW.Speed -= speedDecrease;
+			if (movementComponent.Speed > 0)
+			{
+				localTransformRW.ValueRW.Position += delta;
+			}
 		}
 	}
 }
