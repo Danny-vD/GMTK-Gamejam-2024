@@ -3,7 +3,7 @@
 namespace ECS.Components.DragNDrop.Tags
 {
 	/// <summary>
-	/// Used to mark something as draggable
+	/// Used to mark that something is currently being dragged by the mouse cursor
 	/// </summary>
 	public struct IsDraggedTag : IComponentData
 	{
