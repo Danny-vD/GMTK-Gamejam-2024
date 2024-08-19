@@ -58,17 +58,19 @@
     <Analyzer Include="D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\PackageCache\com.unity.entities\Unity.Entities\SourceGenerators\Unity.Entities.Analyzer.CodeFixes.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\1. Scripts\ECS\TESTING\Components\MovementComponent.cs" />
-    <Compile Include="Assets\1. Scripts\ECS\TESTING\Authoring\Bakers\CubeSpawnerBaker.cs" />
-    <Compile Include="Assets\1. Scripts\ECS\TESTING\Components\CubeSpawnerComponent.cs" />
+    <Compile Include="Assets\1. Scripts\zOLD\Authoring\CubeSpawnerAuthoring.cs" />
+    <Compile Include="Assets\1. Scripts\zOLD\Systems\MovementSystem.cs" />
+    <Compile Include="Assets\1. Scripts\zOLD\Components\Aspects\MovementAspect.cs" />
+    <Compile Include="Assets\1. Scripts\ECS\Components\DragNDrop\OriginalPositionComponent.cs" />
+    <Compile Include="Assets\1. Scripts\zOLD\Systems\Jobs\MoveEntityJob.cs" />
+    <Compile Include="Assets\1. Scripts\zOLD\Components\MovementComponent.cs" />
+    <Compile Include="Assets\1. Scripts\zOLD\Authoring\Bakers\CubeSpawnerBaker.cs" />
+    <Compile Include="Assets\1. Scripts\zOLD\Components\CubeSpawnerComponent.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Components\DragNDrop\Tags\DraggableTag.cs" />
-    <Compile Include="Assets\1. Scripts\ECS\TESTING\Systems\CubeSpawnerSystem.cs" />
-    <Compile Include="Assets\1. Scripts\ECS\TESTING\Systems\MovementSystem.cs" />
-    <Compile Include="Assets\1. Scripts\ECS\TESTING\Components\Aspects\MovementAspect.cs" />
-    <Compile Include="Assets\1. Scripts\ECS\TESTING\Authoring\CubeSpawnerAuthoring.cs" />
+    <Compile Include="Assets\1. Scripts\General\UI\UIFunctionality.cs" />
+    <Compile Include="Assets\1. Scripts\zOLD\Systems\CubeSpawnerSystem.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Components\DragNDrop\Tags\IsDraggedTag.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Authoring\ShapeAuthoring.cs" />
-    <Compile Include="Assets\1. Scripts\ECS\TESTING\Systems\Jobs\MoveEntityJob.cs" />
     <Compile Include="Assets\1. Scripts\ScoreManager.cs" />
     <Compile Include="Assets\1. Scripts\DebugInfo\UI\DebugTextManager.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
