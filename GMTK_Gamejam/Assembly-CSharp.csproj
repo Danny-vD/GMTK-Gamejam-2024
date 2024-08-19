@@ -58,18 +58,19 @@
     <Analyzer Include="D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\PackageCache\com.unity.entities\Unity.Entities\SourceGenerators\Unity.Entities.Analyzer.CodeFixes.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\1. Scripts\ECS\Authoring\CubeSpawnerAuthoring.cs" />
-    <Compile Include="Assets\1. Scripts\ECS\Systems\MovementSystem.cs" />
-    <Compile Include="Assets\1. Scripts\ECS\Systems\CubeSpawnerSystem.cs" />
-    <Compile Include="Assets\1. Scripts\ECS\Components\MovementComponent.cs" />
-    <Compile Include="Assets\1. Scripts\ECS\Components\CubeSpawnerComponent.cs" />
-    <Compile Include="Assets\1. Scripts\ECS\Components\Aspects\MovementAspect.cs" />
-    <Compile Include="Assets\1. Scripts\ECS\Systems\Jobs\MoveEntityJob.cs" />
-    <Compile Include="Assets\1. Scripts\ECS\Authoring\Bakers\CubeSpawnerBaker.cs" />
-    <Compile Include="Assets\1. Scripts\ECS\Components\WeightComponent.cs" />
+    <Compile Include="Assets\1. Scripts\ECS\TESTING\Components\MovementComponent.cs" />
+    <Compile Include="Assets\1. Scripts\ECS\TESTING\Authoring\Bakers\CubeSpawnerBaker.cs" />
+    <Compile Include="Assets\1. Scripts\ECS\TESTING\Components\CubeSpawnerComponent.cs" />
+    <Compile Include="Assets\1. Scripts\ECS\Components\DragNDrop\Tags\DraggableTag.cs" />
+    <Compile Include="Assets\1. Scripts\ECS\TESTING\Systems\CubeSpawnerSystem.cs" />
+    <Compile Include="Assets\1. Scripts\ECS\TESTING\Systems\MovementSystem.cs" />
+    <Compile Include="Assets\1. Scripts\ECS\TESTING\Components\Aspects\MovementAspect.cs" />
+    <Compile Include="Assets\1. Scripts\ECS\TESTING\Authoring\CubeSpawnerAuthoring.cs" />
+    <Compile Include="Assets\1. Scripts\ECS\Components\DragNDrop\Tags\IsDraggedTag.cs" />
+    <Compile Include="Assets\1. Scripts\ECS\Authoring\ShapeAuthoring.cs" />
+    <Compile Include="Assets\1. Scripts\ECS\TESTING\Systems\Jobs\MoveEntityJob.cs" />
     <Compile Include="Assets\1. Scripts\ScoreManager.cs" />
     <Compile Include="Assets\1. Scripts\DebugInfo\UI\DebugTextManager.cs" />
-    <Compile Include="Assets\1. Scripts\ECS\Systems\WeightSystem.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile-2-Pass.shader" />

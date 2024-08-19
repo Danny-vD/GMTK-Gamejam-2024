@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5044205267064105657}
   - component: {fileID: 5114143190347282437}
   - component: {fileID: 9046646656300453721}
+  - component: {fileID: 8261600238873259741}
   m_Layer: 0
   m_Name: heart
   m_TagString: Untagged
@@ -219,3 +220,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8261600238873259741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3683280255318636152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f2180b284a74f6e81cb0549dfed6e21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

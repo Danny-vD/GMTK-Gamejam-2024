@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 189458088663259788}
   - component: {fileID: 5236110314601075749}
   - component: {fileID: 4655668973321547174}
+  - component: {fileID: 1264098708248659541}
   m_Layer: 0
   m_Name: pentagon
   m_TagString: Untagged
@@ -168,3 +169,15 @@ PolygonCollider2D:
       - {x: -0.00024265051, y: 1.6040453}
       - {x: -1.6865957, y: 0.37931985}
   m_UseDelaunayMesh: 0
+--- !u!114 &1264098708248659541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4240140783827232117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f2180b284a74f6e81cb0549dfed6e21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
