@@ -13,12 +13,7 @@ namespace ECS.Components.Aspects
 
 		public void Translate(float3 delta)
 		{
-			MovementComponent movementComponent = movementComponentRW.ValueRW;
-
-			if (movementComponent.Speed > 0)
-			{
-				localTransformRW.ValueRW.Position += delta;
-			}
+			localTransformRW.ValueRW.Position += delta;
 		}
 	}
 }
