@@ -8,7 +8,7 @@ namespace ECS.Components.Scoring.HeightMeasurer
 	{
 		public float3 RaycastDirection;
 		public MultiplierName ScoringMultiplier;
-		public float AreaSize;
+		public float AreaRadius;
 		public float RaycastDistance;
 	}
 }

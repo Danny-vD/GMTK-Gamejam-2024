@@ -605,7 +605,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RaycastDirection: {x: -1, y: 0, z: 0}
   ScoringMultiplier: 2
-  AreaSize: 0.2
+  AreaRadius: 0.23
   RaycastDistance: 6
 --- !u!1 &276651609
 GameObject:
@@ -1005,7 +1005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RaycastDirection: {x: -1, y: 0, z: 0}
   ScoringMultiplier: 2
-  AreaSize: 0.2
+  AreaRadius: 0.23
   RaycastDistance: 6
 --- !u!1 &923454570
 GameObject:
@@ -1460,7 +1460,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RaycastDirection: {x: -1, y: 0, z: 0}
   ScoringMultiplier: 0
-  AreaSize: 0.2
+  AreaRadius: 0.23
   RaycastDistance: 6
 --- !u!1 &1343845155
 GameObject:
@@ -2471,7 +2471,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RaycastDirection: {x: -1, y: 0, z: 0}
   ScoringMultiplier: 1
-  AreaSize: 0.2
+  AreaRadius: 0.23
   RaycastDistance: 6
 --- !u!1 &1922823995
 GameObject:
@@ -2606,7 +2606,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RaycastDirection: {x: -1, y: 0, z: 0}
   ScoringMultiplier: 0
-  AreaSize: 0.2
+  AreaRadius: 0.23
   RaycastDistance: 6
 --- !u!1 &2017472512
 GameObject:
@@ -2741,7 +2741,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RaycastDirection: {x: -1, y: 0, z: 0}
   ScoringMultiplier: 1
-  AreaSize: 0.2
+  AreaRadius: 0.23
   RaycastDistance: 6
 --- !u!1 &2129231120
 GameObject:
@@ -2789,7 +2789,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RaycastDirection: {x: -1, y: 0, z: 0}
   ScoringMultiplier: 3
-  AreaSize: 0.2
+  AreaRadius: 0.23
   RaycastDistance: 6
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

@@ -2,6 +2,7 @@
 using Gameplay.Enums;
 using Unity.Entities;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace ECS.Authoring.HeightMeasurer
 {
@@ -9,7 +10,7 @@ namespace ECS.Authoring.HeightMeasurer
 	{
 		public Vector3 RaycastDirection = new Vector3(-1, 0, 0);
 		public MultiplierName ScoringMultiplier;
-		public float AreaSize = 0.2f;
+		public float AreaRadius = 0.2f;
 		public float RaycastDistance = 6;
 
 		public class HeightMeasureAreaBaker : Baker<HeightMeasureAreaAuthoring>
@@ -22,7 +23,7 @@ namespace ECS.Authoring.HeightMeasurer
 				{
 					RaycastDirection = authoring.RaycastDirection,
 					ScoringMultiplier = authoring.ScoringMultiplier,
-					AreaSize = authoring.AreaSize,
+					AreaRadius = authoring.AreaRadius,
 					RaycastDistance = authoring.RaycastDistance,
 				});
 			}
