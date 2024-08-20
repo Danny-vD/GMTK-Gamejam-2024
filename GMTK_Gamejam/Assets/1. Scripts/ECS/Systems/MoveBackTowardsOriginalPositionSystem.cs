@@ -1,8 +1,12 @@
-﻿using ECS.Components.DragNDrop.Aspects;
+﻿using ECS.Components.DragNDrop;
+using ECS.Components.DragNDrop.Aspects;
 using ECS.Components.DragNDrop.Tags;
 using Unity.Burst;
 using Unity.Entities;
 using Unity.Mathematics;
+using Unity.Physics;
+using Unity.Physics.Aspects;
+using UnityEngine;
 
 namespace ECS.Systems
 {
@@ -13,8 +17,8 @@ namespace ECS.Systems
 		public void OnCreate(ref SystemState state)
 		{
 			state.RequireForUpdate<EndSimulationEntityCommandBufferSystem.Singleton>();
-			
-			state.RequireForUpdate<ShouldMoveBackTowardsOriginalPositionTag>();
+
+			state.RequireForUpdate<ShouldMoveBackTowardsOriginalPositionComponent>();
 		}
 
 		[BurstCompile]
@@ -22,11 +26,11 @@ namespace ECS.Systems
 		{
 			float deltaTime = SystemAPI.Time.DeltaTime;
 			EndSimulationEntityCommandBufferSystem.Singleton ecbSingleton = SystemAPI.GetSingleton<EndSimulationEntityCommandBufferSystem.Singleton>();
-			
+
 			new MoveBackToOriginalPositionJob()
 			{
 				DeltaTime = deltaTime,
-				ECB = ecbSingleton.CreateCommandBuffer(state.WorldUnmanaged).AsParallelWriter(),
+				ECB       = ecbSingleton.CreateCommandBuffer(state.WorldUnmanaged).AsParallelWriter(),
 			}.ScheduleParallel();
 		}
 	}
@@ -40,15 +44,44 @@ namespace ECS.Systems
 		[BurstCompile]
 		public void Execute(MovingBackAspect movingBackAspect, [EntityIndexInQuery] int sortkey)
 		{
-			float3 originalPosition = movingBackAspect.OriginalPositionComponentRO.ValueRO.OriginalPosition;
-			float3 currentPosition = movingBackAspect.LocalTransformRW.ValueRO.Position;
-
-			movingBackAspect.LocalTransformRW.ValueRW.Position += movingBackAspect.MovementSpeedComponentRO.ValueRO.Speed * DeltaTime * math.normalize(originalPosition - currentPosition);
-
-			if (math.distancesq(originalPosition, currentPosition) < movingBackAspect.OriginalPositionComponentRO.ValueRO.DistanceBeforeStopMoving)
+			if (!movingBackAspect.MoveTowardsOriginalPositionComponentRW.ValueRO.finishedMoving)
 			{
-				movingBackAspect.LocalTransformRW.ValueRW.Position = originalPosition;
-				ECB.RemoveComponent<ShouldMoveBackTowardsOriginalPositionTag>(sortkey, movingBackAspect.Entity);
+				float3 originalPosition = movingBackAspect.OriginalPositionComponentRO.ValueRO.OriginalPosition;
+				float3 currentPosition = movingBackAspect.LocalTransformRW.ValueRO.Position;
+
+				movingBackAspect.LocalTransformRW.ValueRW.Position += movingBackAspect.MovementSpeedComponentRO.ValueRO.Speed * DeltaTime * math.normalize(originalPosition - currentPosition);
+
+				if (math.distancesq(originalPosition, currentPosition) < movingBackAspect.OriginalPositionComponentRO.ValueRO.DistanceBeforeStopMoving)
+				{
+					movingBackAspect.LocalTransformRW.ValueRW.Position = originalPosition;
+					
+					movingBackAspect.MoveTowardsOriginalPositionComponentRW.ValueRW.finishedMoving = true;
+				}
+			}
+
+			if (!movingBackAspect.MoveTowardsOriginalPositionComponentRW.ValueRO.finishedRotating)
+			{
+				quaternion originalRotation = movingBackAspect.OriginalPositionComponentRO.ValueRO.OriginalRotation;
+				quaternion currentRotation = movingBackAspect.LocalTransformRW.ValueRO.Rotation;
+
+				float angleDelta = math.Euler(originalRotation).z - math.Euler(currentRotation).z;
+				float angleDeltaDegrees = angleDelta * math.TODEGREES;
+
+				float delta = math.min(math.abs(angleDeltaDegrees), movingBackAspect.MovementSpeedComponentRO.ValueRO.RotationSpeed * DeltaTime);
+
+				movingBackAspect.LocalTransformRW.ValueRW.Rotation = movingBackAspect.LocalTransformRW.ValueRW.RotateZ(delta).Rotation;
+
+				if (angleDelta < 0.03f)
+				{
+					movingBackAspect.LocalTransformRW.ValueRW.Rotation = originalRotation;
+
+					movingBackAspect.MoveTowardsOriginalPositionComponentRW.ValueRW.finishedRotating = true;
+				}
+			}
+
+			if (movingBackAspect.MoveTowardsOriginalPositionComponentRW.ValueRO is { finishedMoving: true, finishedRotating: true })
+			{
+				ECB.RemoveComponent<ShouldMoveBackTowardsOriginalPositionComponent>(sortkey, movingBackAspect.Entity);
 			}
 		}
 	}

@@ -5,5 +5,6 @@ namespace ECS.Components.DragNDrop
 	public struct MovementSpeedComponent : IComponentData
 	{
 		public float Speed;
+		public float RotationSpeed;
 	}
 }

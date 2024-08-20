@@ -2,6 +2,9 @@
 using ECS.Components.DragNDrop.Tags;
 using ECS.Components.PhysicsSimulation.Tags;
 using Unity.Entities;
+using Unity.Mathematics;
+using Unity.Physics;
+using Unity.Physics.Aspects;
 using UnityEngine;
 
 namespace ECS.Authoring
@@ -12,6 +15,9 @@ namespace ECS.Authoring
 		
 		[Tooltip("How fast the shape moves back to their original position in units/second")]
 		public float Speed = 1;
+		
+		[Tooltip("How fast the shape rotates back to their original rotation in degrees/second")]
+		public float RotationSpeed = 1;
 		
 		public class ShapeAuthoringBaker : Baker<ShapeAuthoring>
 		{
@@ -24,15 +30,19 @@ namespace ECS.Authoring
 				AddComponent(entity, new OriginalPositionComponent()
 				{
 					OriginalPosition = authoring.transform.position,
+					OriginalRotation = authoring.transform.rotation,
+						
 					DistanceBeforeStopMoving = authoring.DistanceBeforeStopMoving,
 				});
 				
 				AddComponent(entity, new MovementSpeedComponent()
 				{
 					Speed = authoring.Speed,
+					RotationSpeed = authoring.RotationSpeed,
 				});
 				
 				AddComponent(entity, new ShouldStopSimulatingTag());
+				AddComponent(entity, new ShouldDisableInertiaXYTag());
 			}
 		}
 	}

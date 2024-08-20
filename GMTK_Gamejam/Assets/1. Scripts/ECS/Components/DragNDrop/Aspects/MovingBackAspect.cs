@@ -9,9 +9,9 @@ namespace ECS.Components.DragNDrop.Aspects
 		public readonly Entity Entity;
 
 		public readonly RefRW<LocalTransform> LocalTransformRW;
+		
 		public readonly RefRO<OriginalPositionComponent> OriginalPositionComponentRO;
 		public readonly RefRO<MovementSpeedComponent> MovementSpeedComponentRO;
-		
-		public readonly RefRO<ShouldMoveBackTowardsOriginalPositionTag> MoveTowardsOriginalPositionTag;
+		public readonly RefRW<ShouldMoveBackTowardsOriginalPositionComponent> MoveTowardsOriginalPositionComponentRW;
 	}
 }

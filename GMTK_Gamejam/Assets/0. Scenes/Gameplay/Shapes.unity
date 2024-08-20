@@ -174,9 +174,49 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1375696578924504610, guid: 909513986eacbd14b8e040f6eefdb988, type: 3}
+      propertyPath: Speed
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1375696578924504610, guid: 909513986eacbd14b8e040f6eefdb988, type: 3}
+      propertyPath: RotationSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2584028809446475466, guid: 909513986eacbd14b8e040f6eefdb988, type: 3}
       propertyPath: m_Constraints
-      value: 48
+      value: 56
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584028809446475466, guid: 909513986eacbd14b8e040f6eefdb988, type: 3}
+      propertyPath: m_ImplicitTensor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584028809446475466, guid: 909513986eacbd14b8e040f6eefdb988, type: 3}
+      propertyPath: m_InertiaTensor.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584028809446475466, guid: 909513986eacbd14b8e040f6eefdb988, type: 3}
+      propertyPath: m_InertiaTensor.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584028809446475466, guid: 909513986eacbd14b8e040f6eefdb988, type: 3}
+      propertyPath: m_InertiaTensor.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584028809446475466, guid: 909513986eacbd14b8e040f6eefdb988, type: 3}
+      propertyPath: m_InertiaRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584028809446475466, guid: 909513986eacbd14b8e040f6eefdb988, type: 3}
+      propertyPath: m_InertiaRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584028809446475466, guid: 909513986eacbd14b8e040f6eefdb988, type: 3}
+      propertyPath: m_InertiaRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584028809446475466, guid: 909513986eacbd14b8e040f6eefdb988, type: 3}
+      propertyPath: m_InertiaRotation.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2943125171754955977, guid: 909513986eacbd14b8e040f6eefdb988, type: 3}
       propertyPath: m_Name
@@ -248,6 +288,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -9191463363130772282, guid: 7d1218da1c53f5d42ac07c7de7b8bc4d, type: 3}
+      propertyPath: Speed
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -9191463363130772282, guid: 7d1218da1c53f5d42ac07c7de7b8bc4d, type: 3}
+      propertyPath: RotationSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2172222995050051933, guid: 7d1218da1c53f5d42ac07c7de7b8bc4d, type: 3}
       propertyPath: m_CollisionDetection
       value: 1
@@ -270,7 +318,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7029122399324989433, guid: 7d1218da1c53f5d42ac07c7de7b8bc4d, type: 3}
       propertyPath: m_Constraints
-      value: 48
+      value: 56
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029122399324989433, guid: 7d1218da1c53f5d42ac07c7de7b8bc4d, type: 3}
+      propertyPath: m_ImplicitTensor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029122399324989433, guid: 7d1218da1c53f5d42ac07c7de7b8bc4d, type: 3}
+      propertyPath: m_InertiaTensor.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029122399324989433, guid: 7d1218da1c53f5d42ac07c7de7b8bc4d, type: 3}
+      propertyPath: m_InertiaTensor.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029122399324989433, guid: 7d1218da1c53f5d42ac07c7de7b8bc4d, type: 3}
+      propertyPath: m_InertiaTensor.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029122399324989433, guid: 7d1218da1c53f5d42ac07c7de7b8bc4d, type: 3}
+      propertyPath: m_InertiaRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029122399324989433, guid: 7d1218da1c53f5d42ac07c7de7b8bc4d, type: 3}
+      propertyPath: m_InertiaRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029122399324989433, guid: 7d1218da1c53f5d42ac07c7de7b8bc4d, type: 3}
+      propertyPath: m_InertiaRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029122399324989433, guid: 7d1218da1c53f5d42ac07c7de7b8bc4d, type: 3}
+      propertyPath: m_InertiaRotation.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8899989183169309923, guid: 7d1218da1c53f5d42ac07c7de7b8bc4d, type: 3}
       propertyPath: m_LocalScale.x
@@ -562,7 +642,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3419029639538220086, guid: 0adfa63d74bdac841858d41e0600dc9b, type: 3}
       propertyPath: m_Constraints
-      value: 48
+      value: 56
+      objectReference: {fileID: 0}
+    - target: {fileID: 3419029639538220086, guid: 0adfa63d74bdac841858d41e0600dc9b, type: 3}
+      propertyPath: m_ImplicitTensor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3419029639538220086, guid: 0adfa63d74bdac841858d41e0600dc9b, type: 3}
+      propertyPath: m_InertiaTensor.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 3419029639538220086, guid: 0adfa63d74bdac841858d41e0600dc9b, type: 3}
+      propertyPath: m_InertiaTensor.y
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 3683280255318636152, guid: 0adfa63d74bdac841858d41e0600dc9b, type: 3}
       propertyPath: m_Name
@@ -592,6 +684,14 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 0.11
       objectReference: {fileID: 0}
+    - target: {fileID: 8261600238873259741, guid: 0adfa63d74bdac841858d41e0600dc9b, type: 3}
+      propertyPath: Speed
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8261600238873259741, guid: 0adfa63d74bdac841858d41e0600dc9b, type: 3}
+      propertyPath: RotationSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 9046646656300453721, guid: 0adfa63d74bdac841858d41e0600dc9b, type: 3}
       propertyPath: m_CollisionDetection
       value: 1
@@ -617,9 +717,49 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2255463229377009481, guid: 01200c939a09075458d857a9a66bec35, type: 3}
+      propertyPath: Speed
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2255463229377009481, guid: 01200c939a09075458d857a9a66bec35, type: 3}
+      propertyPath: RotationSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1736742897434316188, guid: 01200c939a09075458d857a9a66bec35, type: 3}
       propertyPath: m_Constraints
-      value: 48
+      value: 56
+      objectReference: {fileID: 0}
+    - target: {fileID: 1736742897434316188, guid: 01200c939a09075458d857a9a66bec35, type: 3}
+      propertyPath: m_ImplicitTensor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1736742897434316188, guid: 01200c939a09075458d857a9a66bec35, type: 3}
+      propertyPath: m_InertiaTensor.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1736742897434316188, guid: 01200c939a09075458d857a9a66bec35, type: 3}
+      propertyPath: m_InertiaTensor.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1736742897434316188, guid: 01200c939a09075458d857a9a66bec35, type: 3}
+      propertyPath: m_InertiaTensor.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1736742897434316188, guid: 01200c939a09075458d857a9a66bec35, type: 3}
+      propertyPath: m_InertiaRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1736742897434316188, guid: 01200c939a09075458d857a9a66bec35, type: 3}
+      propertyPath: m_InertiaRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1736742897434316188, guid: 01200c939a09075458d857a9a66bec35, type: 3}
+      propertyPath: m_InertiaRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1736742897434316188, guid: 01200c939a09075458d857a9a66bec35, type: 3}
+      propertyPath: m_InertiaRotation.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2361421871560875908, guid: 01200c939a09075458d857a9a66bec35, type: 3}
       propertyPath: m_Radius
@@ -800,11 +940,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3080235093557053645, guid: 630002fbc9758524f85767483336211e, type: 3}
       propertyPath: m_Constraints
-      value: 48
+      value: 56
+      objectReference: {fileID: 0}
+    - target: {fileID: 3080235093557053645, guid: 630002fbc9758524f85767483336211e, type: 3}
+      propertyPath: m_ImplicitTensor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3080235093557053645, guid: 630002fbc9758524f85767483336211e, type: 3}
+      propertyPath: m_InertiaTensor.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3080235093557053645, guid: 630002fbc9758524f85767483336211e, type: 3}
+      propertyPath: m_InertiaTensor.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3080235093557053645, guid: 630002fbc9758524f85767483336211e, type: 3}
+      propertyPath: m_InertiaTensor.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3080235093557053645, guid: 630002fbc9758524f85767483336211e, type: 3}
+      propertyPath: m_InertiaRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3080235093557053645, guid: 630002fbc9758524f85767483336211e, type: 3}
+      propertyPath: m_InertiaRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3080235093557053645, guid: 630002fbc9758524f85767483336211e, type: 3}
+      propertyPath: m_InertiaRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3080235093557053645, guid: 630002fbc9758524f85767483336211e, type: 3}
+      propertyPath: m_InertiaRotation.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6597169092683853107, guid: 630002fbc9758524f85767483336211e, type: 3}
       propertyPath: m_Radius
       value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7386225284691106831, guid: 630002fbc9758524f85767483336211e, type: 3}
+      propertyPath: Speed
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7386225284691106831, guid: 630002fbc9758524f85767483336211e, type: 3}
+      propertyPath: RotationSpeed
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7772680182340402208, guid: 630002fbc9758524f85767483336211e, type: 3}
       propertyPath: m_Color.b
@@ -857,7 +1037,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4328822845804923556, guid: 8ea5ccb79b065f24dada62577389eecd, type: 3}
       propertyPath: m_Constraints
-      value: 48
+      value: 56
+      objectReference: {fileID: 0}
+    - target: {fileID: 4328822845804923556, guid: 8ea5ccb79b065f24dada62577389eecd, type: 3}
+      propertyPath: m_ImplicitTensor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4328822845804923556, guid: 8ea5ccb79b065f24dada62577389eecd, type: 3}
+      propertyPath: m_InertiaTensor.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4328822845804923556, guid: 8ea5ccb79b065f24dada62577389eecd, type: 3}
+      propertyPath: m_InertiaTensor.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4328822845804923556, guid: 8ea5ccb79b065f24dada62577389eecd, type: 3}
+      propertyPath: m_InertiaTensor.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4328822845804923556, guid: 8ea5ccb79b065f24dada62577389eecd, type: 3}
+      propertyPath: m_InertiaRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4328822845804923556, guid: 8ea5ccb79b065f24dada62577389eecd, type: 3}
+      propertyPath: m_InertiaRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4328822845804923556, guid: 8ea5ccb79b065f24dada62577389eecd, type: 3}
+      propertyPath: m_InertiaRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4328822845804923556, guid: 8ea5ccb79b065f24dada62577389eecd, type: 3}
+      propertyPath: m_InertiaRotation.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5619166918647344140, guid: 8ea5ccb79b065f24dada62577389eecd, type: 3}
       propertyPath: m_LocalScale.x
@@ -907,6 +1119,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6208805761563054316, guid: 8ea5ccb79b065f24dada62577389eecd, type: 3}
+      propertyPath: Speed
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6208805761563054316, guid: 8ea5ccb79b065f24dada62577389eecd, type: 3}
+      propertyPath: RotationSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -934,6 +1154,14 @@ PrefabInstance:
     - target: {fileID: 189458088663259788, guid: b116becf42f911b45bfecba23645a6dc, type: 3}
       propertyPath: m_Color.r
       value: 0.7264151
+      objectReference: {fileID: 0}
+    - target: {fileID: 1264098708248659541, guid: b116becf42f911b45bfecba23645a6dc, type: 3}
+      propertyPath: Speed
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1264098708248659541, guid: b116becf42f911b45bfecba23645a6dc, type: 3}
+      propertyPath: RotationSpeed
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4240140783827232117, guid: b116becf42f911b45bfecba23645a6dc, type: 3}
       propertyPath: m_Name
@@ -993,7 +1221,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6574894545969297307, guid: b116becf42f911b45bfecba23645a6dc, type: 3}
       propertyPath: m_Constraints
-      value: 48
+      value: 56
+      objectReference: {fileID: 0}
+    - target: {fileID: 6574894545969297307, guid: b116becf42f911b45bfecba23645a6dc, type: 3}
+      propertyPath: m_ImplicitTensor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6574894545969297307, guid: b116becf42f911b45bfecba23645a6dc, type: 3}
+      propertyPath: m_InertiaTensor.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6574894545969297307, guid: b116becf42f911b45bfecba23645a6dc, type: 3}
+      propertyPath: m_InertiaTensor.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6574894545969297307, guid: b116becf42f911b45bfecba23645a6dc, type: 3}
+      propertyPath: m_InertiaTensor.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6574894545969297307, guid: b116becf42f911b45bfecba23645a6dc, type: 3}
+      propertyPath: m_InertiaRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6574894545969297307, guid: b116becf42f911b45bfecba23645a6dc, type: 3}
+      propertyPath: m_InertiaRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6574894545969297307, guid: b116becf42f911b45bfecba23645a6dc, type: 3}
+      propertyPath: m_InertiaRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6574894545969297307, guid: b116becf42f911b45bfecba23645a6dc, type: 3}
+      propertyPath: m_InertiaRotation.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1059,7 +1319,47 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2668443834174406266, guid: d173ee2b468db654490a9a7c5c01fd13, type: 3}
       propertyPath: m_Constraints
-      value: 48
+      value: 56
+      objectReference: {fileID: 0}
+    - target: {fileID: 2668443834174406266, guid: d173ee2b468db654490a9a7c5c01fd13, type: 3}
+      propertyPath: m_ImplicitTensor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2668443834174406266, guid: d173ee2b468db654490a9a7c5c01fd13, type: 3}
+      propertyPath: m_InertiaTensor.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2668443834174406266, guid: d173ee2b468db654490a9a7c5c01fd13, type: 3}
+      propertyPath: m_InertiaTensor.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2668443834174406266, guid: d173ee2b468db654490a9a7c5c01fd13, type: 3}
+      propertyPath: m_InertiaTensor.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2668443834174406266, guid: d173ee2b468db654490a9a7c5c01fd13, type: 3}
+      propertyPath: m_InertiaRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2668443834174406266, guid: d173ee2b468db654490a9a7c5c01fd13, type: 3}
+      propertyPath: m_InertiaRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2668443834174406266, guid: d173ee2b468db654490a9a7c5c01fd13, type: 3}
+      propertyPath: m_InertiaRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2668443834174406266, guid: d173ee2b468db654490a9a7c5c01fd13, type: 3}
+      propertyPath: m_InertiaRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510090195853286635, guid: d173ee2b468db654490a9a7c5c01fd13, type: 3}
+      propertyPath: Speed
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5510090195853286635, guid: d173ee2b468db654490a9a7c5c01fd13, type: 3}
+      propertyPath: RotationSpeed
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5728201513539645938, guid: d173ee2b468db654490a9a7c5c01fd13, type: 3}
       propertyPath: m_Color.b
@@ -1142,8 +1442,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -5582534812205153721, guid: 8e0c4cb50a5ffd64f9aff0d3fb112723, type: 3}
+      propertyPath: Speed
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -5582534812205153721, guid: 8e0c4cb50a5ffd64f9aff0d3fb112723, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5582534812205153721, guid: 8e0c4cb50a5ffd64f9aff0d3fb112723, type: 3}
+      propertyPath: RotationSpeed
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1487559068177677894, guid: 8e0c4cb50a5ffd64f9aff0d3fb112723, type: 3}
       propertyPath: m_LocalScale.x
@@ -1195,7 +1503,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3539692832958376801, guid: 8e0c4cb50a5ffd64f9aff0d3fb112723, type: 3}
       propertyPath: m_Constraints
-      value: 48
+      value: 56
+      objectReference: {fileID: 0}
+    - target: {fileID: 3539692832958376801, guid: 8e0c4cb50a5ffd64f9aff0d3fb112723, type: 3}
+      propertyPath: m_ImplicitTensor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3539692832958376801, guid: 8e0c4cb50a5ffd64f9aff0d3fb112723, type: 3}
+      propertyPath: m_InertiaTensor.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3539692832958376801, guid: 8e0c4cb50a5ffd64f9aff0d3fb112723, type: 3}
+      propertyPath: m_InertiaTensor.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3539692832958376801, guid: 8e0c4cb50a5ffd64f9aff0d3fb112723, type: 3}
+      propertyPath: m_InertiaTensor.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3539692832958376801, guid: 8e0c4cb50a5ffd64f9aff0d3fb112723, type: 3}
+      propertyPath: m_InertiaRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3539692832958376801, guid: 8e0c4cb50a5ffd64f9aff0d3fb112723, type: 3}
+      propertyPath: m_InertiaRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3539692832958376801, guid: 8e0c4cb50a5ffd64f9aff0d3fb112723, type: 3}
+      propertyPath: m_InertiaRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3539692832958376801, guid: 8e0c4cb50a5ffd64f9aff0d3fb112723, type: 3}
+      propertyPath: m_InertiaRotation.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3968135360493818773, guid: 8e0c4cb50a5ffd64f9aff0d3fb112723, type: 3}
       propertyPath: m_Name

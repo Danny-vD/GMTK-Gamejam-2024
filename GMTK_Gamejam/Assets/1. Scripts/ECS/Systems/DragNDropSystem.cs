@@ -47,7 +47,7 @@ namespace ECS.Systems
 
 						if (IsWithinClipboardArea(localTransform.Position))
 						{
-							ecb.AddComponent<ShouldMoveBackTowardsOriginalPositionTag>(entity);
+							ecb.AddComponent<ShouldMoveBackTowardsOriginalPositionComponent>(entity);
 						}
 						else
 						{
@@ -80,9 +80,9 @@ namespace ECS.Systems
 							isDragging = true;
 						}
 
-						if (EntityManager.HasComponent<ShouldMoveBackTowardsOriginalPositionTag>(hit.Entity)) // Make sure the entity does not move back where it came from if it was doing that
+						if (EntityManager.HasComponent<ShouldMoveBackTowardsOriginalPositionComponent>(hit.Entity)) // Make sure the entity does not move back where it came from if it was doing that
 						{
-							ecb.RemoveComponent<ShouldMoveBackTowardsOriginalPositionTag>(hit.Entity);
+							ecb.RemoveComponent<ShouldMoveBackTowardsOriginalPositionComponent>(hit.Entity);
 						}
 					}
 				}
