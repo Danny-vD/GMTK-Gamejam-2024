@@ -32,6 +32,13 @@ namespace ECS.Systems
 			foreach (Entity draggedEntity in draggedEntityQuery.ToEntityArray(Allocator.Temp))
 			{
 				LocalTransform localTransform = EntityManager.GetComponentData<LocalTransform>(draggedEntity);
+
+				float scrollDelta = Input.mouseScrollDelta.y;
+
+				if (scrollDelta != 0)
+				{
+					localTransform = localTransform.RotateZ(scrollDelta);
+				}
 				
 				float zPosition = localTransform.Position.z;
 				mouseWorldPosition.z = zPosition;

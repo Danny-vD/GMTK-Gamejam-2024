@@ -1,5 +1,6 @@
 ﻿using ECS.Components.DragNDrop;
 using ECS.Components.DragNDrop.Tags;
+using ECS.Components.PhysicsSimulation.Tags;
 using Unity.Entities;
 using UnityEngine;
 
@@ -30,6 +31,8 @@ namespace ECS.Authoring
 				{
 					Speed = authoring.Speed,
 				});
+				
+				AddComponent(entity, new ShouldStopSimulatingTag());
 			}
 		}
 	}

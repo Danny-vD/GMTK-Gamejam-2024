@@ -8,5 +8,6 @@ namespace ECS.Components.DragNDrop
 		public float DistanceBeforeStopMoving;
 		
 		public float3 OriginalPosition;
+		public quaternion OriginalRotation;
 	}
 }
