@@ -65,15 +65,14 @@
     <Compile Include="Assets\1. Scripts\ECS\Systems\DragNDropSystem.cs" />
     <Compile Include="Assets\1. Scripts\zOLD\Systems\Jobs\MoveEntityJob.cs" />
     <Compile Include="Assets\1. Scripts\zOLD\Components\MovementComponent.cs" />
-    <Compile Include="Assets\1. Scripts\ECS\Components\DragNDrop\Tags\ShouldStartSimulatingTag.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Authoring\Scoring\ScoreAuthoring.cs" />
     <Compile Include="Assets\1. Scripts\zOLD\Authoring\Bakers\CubeSpawnerBaker.cs" />
     <Compile Include="Assets\1. Scripts\Utility\ECS\RaycastHelper.cs" />
     <Compile Include="Assets\1. Scripts\zOLD\Components\CubeSpawnerComponent.cs" />
-    <Compile Include="Assets\1. Scripts\ECS\Components\DragNDrop\Tags\ShouldStopSimulatingTag.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Components\DragNDrop\Tags\DraggableTag.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Systems\DraggingSystem.cs" />
     <Compile Include="Assets\1. Scripts\General\UI\UIFunctionality.cs" />
+    <Compile Include="Assets\1. Scripts\ECS\Components\PhysicsSimulation\Tags\ShouldStopSimulatingTag.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Systems\EnablePhysicsSystem.cs" />
     <Compile Include="Assets\1. Scripts\zOLD\Systems\CubeSpawnerSystem.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Components\DragNDrop\Tags\IsDraggedTag.cs" />
@@ -82,6 +81,7 @@
     <Compile Include="Assets\1. Scripts\General\DebugInfo\UI\DebugTextManager.cs" />
     <Compile Include="Assets\1. Scripts\ScoreManager.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Components\Scoring\ScoringComponent.cs" />
+    <Compile Include="Assets\1. Scripts\ECS\Components\PhysicsSimulation\Tags\ShouldStartSimulatingTag.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile-2-Pass.shader" />

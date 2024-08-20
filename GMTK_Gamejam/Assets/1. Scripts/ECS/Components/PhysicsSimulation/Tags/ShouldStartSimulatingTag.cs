@@ -1,6 +1,6 @@
 ﻿using Unity.Entities;
 
-namespace ECS.Components.DragNDrop.Tags
+namespace ECS.Components.PhysicsSimulation.Tags
 {
 	public struct ShouldStartSimulatingTag : IComponentData
 	{

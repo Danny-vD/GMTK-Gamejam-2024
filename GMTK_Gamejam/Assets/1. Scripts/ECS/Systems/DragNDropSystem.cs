@@ -1,8 +1,8 @@
 ﻿using ECS.Components.DragNDrop.Tags;
+using ECS.Components.PhysicsSimulation.Tags;
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Physics;
-using Unity.Physics.Systems;
 using UnityEngine;
 using Utility.ECS;
 using Ray = UnityEngine.Ray;
@@ -31,17 +31,16 @@ namespace ECS.Systems
 		{
 			EndSimulationEntityCommandBufferSystem.Singleton entityCommandBufferSingleton = SystemAPI.GetSingleton<EndSimulationEntityCommandBufferSystem.Singleton>();
 			EntityCommandBuffer ecb = entityCommandBufferSingleton.CreateCommandBuffer(World.Unmanaged);
-			
+
 			if (isDragging) // NOTE: technically this boolean is not needed
 			{
 				if (Input.GetMouseButtonUp(0))
 				{
-					Debug.Log("Stop dragging");
 					EntityQuery draggedEntities = GetEntityQuery(typeof(IsDraggedTag));
-					
+
 					ecb.AddComponent<ShouldStartSimulatingTag>(draggedEntities, EntityQueryCaptureMode.AtRecord); // TODO: check if inside or outside the shapes area
 					ecb.RemoveComponent<IsDraggedTag>(draggedEntities, EntityQueryCaptureMode.AtRecord);
-					
+
 					isDragging = false;
 				}
 			}
@@ -49,8 +48,6 @@ namespace ECS.Systems
 			{
 				if (Input.GetMouseButtonDown(0))
 				{
-					Debug.Log("Start dragging");
-					
 					Ray ray = maincamera.ScreenPointToRay(Input.mousePosition);
 					float3 rayStart = ray.origin;
 					float3 rayEnd = ray.GetPoint(50);
@@ -61,7 +58,7 @@ namespace ECS.Systems
 						{
 							ecb.AddComponent<ShouldStopSimulatingTag>(hit.Entity);
 							ecb.AddComponent<IsDraggedTag>(hit.Entity);
-							
+
 							isDragging = true;
 						}
 					}
