@@ -2,7 +2,6 @@
 using Gameplay.Enums;
 using Unity.Entities;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace ECS.Authoring.HeightMeasurer
 {

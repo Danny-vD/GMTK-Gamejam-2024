@@ -52,7 +52,9 @@ namespace ECS.Systems
 					float3 rayStart = ray.origin;
 					float3 rayEnd = ray.GetPoint(50);
 
-					if (RaycastHelper.CastRay(SystemAPI.GetSingleton<PhysicsWorldSingleton>().CollisionWorld, rayStart, rayEnd, CollisionFilter.Default, out RaycastHit hit))
+					CollisionWorld collisionWorld = SystemAPI.GetSingleton<PhysicsWorldSingleton>().CollisionWorld;
+
+					if (RaycastHelper.CastRay(collisionWorld, rayStart, rayEnd, CollisionFilter.Default, out RaycastHit hit))
 					{
 						if (EntityManager.HasComponent<DraggableTag>(hit.Entity))
 						{
