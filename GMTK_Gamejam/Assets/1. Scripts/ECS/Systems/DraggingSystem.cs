@@ -1,28 +1,47 @@
 ﻿using ECS.Components.DragNDrop.Tags;
 using ECS.Systems.Jobs;
 using Unity.Burst;
+using Unity.Collections;
 using Unity.Entities;
+using Unity.Mathematics;
+using Unity.Transforms;
+using UnityEngine;
 
 namespace ECS.Systems
 {
-	[BurstCompile, RequireMatchingQueriesForUpdate]
-	public partial struct DraggingSystem : ISystem
+	[RequireMatchingQueriesForUpdate, UpdateAfter(typeof(DragNDropSystem))]
+	public partial class DraggingSystem : SystemBase
 	{
 		private EntityQuery draggedEntityQuery;
-		
-		[BurstCompile]
-		public void OnCreate(ref SystemState state)
+		private Camera maincamera;
+
+		protected override void OnCreate()
 		{
-			draggedEntityQuery = state.GetEntityQuery(ComponentType.ReadOnly<IsDraggedTag>());
-			state.RequireForUpdate(draggedEntityQuery);
+			draggedEntityQuery = GetEntityQuery(ComponentType.ReadOnly<IsDraggedTag>());
+			RequireForUpdate(draggedEntityQuery);
+
+			maincamera = Camera.main;
 		}
-		
-		[BurstCompile]
-		public void OnUpdate(ref SystemState state)
+
+		protected override void OnUpdate()
 		{
-			new DraggingJob().ScheduleParallel();
+			float3 mouseWorldPosition = maincamera.ScreenToWorldPoint(Input.mousePosition);
+			
+			EntityCommandBuffer ecb = new EntityCommandBuffer(Allocator.Temp);
+			
+			foreach (Entity draggedEntity in draggedEntityQuery.ToEntityArray(Allocator.Temp))
+			{
+				LocalTransform localTransform = EntityManager.GetComponentData<LocalTransform>(draggedEntity);
+				
+				float zPosition = localTransform.Position.z;
+				mouseWorldPosition.z = zPosition;
+				
+				localTransform.Position = mouseWorldPosition;
+				
+				ecb.SetComponent(draggedEntity, localTransform);
+			}
+			
+			ecb.Playback(EntityManager);
 		}
 	}
-	
-	
 }
