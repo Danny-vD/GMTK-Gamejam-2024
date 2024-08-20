@@ -7,6 +7,11 @@ namespace ECS.Authoring
 {
 	public class ShapeAuthoring : MonoBehaviour
 	{
+		public float DistanceBeforeStopMoving = 0.001f;
+		
+		[Tooltip("How fast the shape moves back to their original position in units/second")]
+		public float Speed = 1;
+		
 		public class ShapeAuthoringBaker : Baker<ShapeAuthoring>
 		{
 			public override void Bake(ShapeAuthoring authoring)
@@ -18,6 +23,12 @@ namespace ECS.Authoring
 				AddComponent(entity, new OriginalPositionComponent()
 				{
 					OriginalPosition = authoring.transform.position,
+					DistanceBeforeStopMoving = authoring.DistanceBeforeStopMoving,
+				});
+				
+				AddComponent(entity, new MovementSpeedComponent()
+				{
+					Speed = authoring.Speed,
 				});
 			}
 		}

@@ -1,8 +1,11 @@
-﻿using ECS.Components.DragNDrop.Tags;
+﻿using ECS.Components.DragNDrop;
+using ECS.Components.DragNDrop.Tags;
 using ECS.Components.PhysicsSimulation.Tags;
+using Unity.Collections;
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Physics;
+using Unity.Transforms;
 using UnityEngine;
 using Utility.ECS;
 using Ray = UnityEngine.Ray;
@@ -37,8 +40,21 @@ namespace ECS.Systems
 				if (Input.GetMouseButtonUp(0))
 				{
 					EntityQuery draggedEntities = GetEntityQuery(typeof(IsDraggedTag));
+					
+					foreach (Entity entity in draggedEntities.ToEntityArray(Allocator.Temp))
+					{
+						LocalTransform localTransform = EntityManager.GetComponentData<LocalTransform>(entity);
 
-					ecb.AddComponent<ShouldStartSimulatingTag>(draggedEntities, EntityQueryCaptureMode.AtRecord); // TODO: check if inside or outside the shapes area
+						if (IsWithinClipboardArea(localTransform.Position))
+						{
+							ecb.AddComponent<ShouldMoveBackTowardsOriginalPositionTag>(entity);
+						}
+						else
+						{
+							ecb.AddComponent<ShouldStartSimulatingTag>(entity);
+						}
+					}
+					
 					ecb.RemoveComponent<IsDraggedTag>(draggedEntities, EntityQueryCaptureMode.AtRecord);
 
 					isDragging = false;
@@ -63,9 +79,26 @@ namespace ECS.Systems
 
 							isDragging = true;
 						}
+
+						if (EntityManager.HasComponent<ShouldMoveBackTowardsOriginalPositionTag>(hit.Entity)) // Make sure the entity does not move back where it came from if it was doing that
+						{
+							ecb.RemoveComponent<ShouldMoveBackTowardsOriginalPositionTag>(hit.Entity);
+						}
 					}
 				}
 			}
+		}
+
+		private bool IsWithinClipboardArea(float3 position)
+		{
+			Entity singletonEntity = SystemAPI.GetSingletonEntity<ClipboardComponent>();
+
+			RefRO<ClipboardComponent> clipboardComponentRO = SystemAPI.GetComponentRO<ClipboardComponent>(singletonEntity);
+
+			float3 topleft = clipboardComponentRO.ValueRO.TopLeftCorner;
+			float3 bottomRight = clipboardComponentRO.ValueRO.BottomRightCorner;
+			
+			return position.y <= topleft.y && position.y >= bottomRight.y && position.x >= topleft.x && position.x <= bottomRight.x;
 		}
 
 		protected override void OnDestroy()

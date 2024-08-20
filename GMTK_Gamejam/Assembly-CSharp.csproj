@@ -59,14 +59,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\1. Scripts\zOLD\Authoring\CubeSpawnerAuthoring.cs" />
+    <Compile Include="Assets\1. Scripts\ECS\Components\DragNDrop\MovementSpeedComponent.cs" />
     <Compile Include="Assets\1. Scripts\zOLD\Systems\MovementSystem.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Components\DragNDrop\OriginalPositionComponent.cs" />
     <Compile Include="Assets\1. Scripts\zOLD\Components\Aspects\MovementAspect.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Systems\DragNDropSystem.cs" />
+    <Compile Include="Assets\1. Scripts\ECS\Components\DragNDrop\ClipboardComponent.cs" />
     <Compile Include="Assets\1. Scripts\zOLD\Systems\Jobs\MoveEntityJob.cs" />
+    <Compile Include="Assets\1. Scripts\ECS\Systems\MoveBackTowardsOriginalPositionSystem.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Authoring\HeightMeasurer\HeightMeasureAreaAuthoring.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Systems\HeightMeasureSystem.cs" />
     <Compile Include="Assets\1. Scripts\zOLD\Components\MovementComponent.cs" />
+    <Compile Include="Assets\1. Scripts\ECS\Authoring\ClipboardAuthoring.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Authoring\Scoring\ScoreAuthoring.cs" />
     <Compile Include="Assets\1. Scripts\zOLD\Authoring\Bakers\CubeSpawnerBaker.cs" />
     <Compile Include="Assets\1. Scripts\Utility\ECS\RaycastHelper.cs" />
@@ -78,6 +82,7 @@
     <Compile Include="Assets\1. Scripts\ECS\Components\DragNDrop\Tags\DraggableTag.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Systems\DraggingSystem.cs" />
     <Compile Include="Assets\1. Scripts\General\UI\UIFunctionality.cs" />
+    <Compile Include="Assets\1. Scripts\ECS\Components\DragNDrop\Tags\ShouldMoveBackTowardsOriginalPositionTag.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Components\PhysicsSimulation\Tags\ShouldStopSimulatingTag.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Systems\EnablePhysicsSystem.cs" />
     <Compile Include="Assets\1. Scripts\zOLD\Systems\CubeSpawnerSystem.cs" />
@@ -85,6 +90,7 @@
     <Compile Include="Assets\1. Scripts\ECS\Authoring\ShapeAuthoring.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Systems\DisablePhysicsSystem.cs" />
     <Compile Include="Assets\1. Scripts\General\DebugInfo\UI\DebugTextManager.cs" />
+    <Compile Include="Assets\1. Scripts\ECS\Components\DragNDrop\Aspects\MovingBackAspect.cs" />
     <Compile Include="Assets\1. Scripts\ScoreManager.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Components\Scoring\ScoringComponent.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Components\PhysicsSimulation\Tags\ShouldStartSimulatingTag.cs" />
