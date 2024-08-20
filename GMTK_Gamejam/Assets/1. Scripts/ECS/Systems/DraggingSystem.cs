@@ -37,7 +37,7 @@ namespace ECS.Systems
 
 				if (scrollDelta != 0)
 				{
-					localTransform = localTransform.RotateZ(scrollDelta);
+					localTransform = localTransform.RotateZ(math.sign(scrollDelta) * 45 * SystemAPI.Time.DeltaTime);
 				}
 				
 				float zPosition = localTransform.Position.z;
