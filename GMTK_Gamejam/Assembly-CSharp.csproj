@@ -64,11 +64,14 @@
     <Compile Include="Assets\1. Scripts\zOLD\Components\Aspects\MovementAspect.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Systems\DragNDropSystem.cs" />
     <Compile Include="Assets\1. Scripts\zOLD\Systems\Jobs\MoveEntityJob.cs" />
+    <Compile Include="Assets\1. Scripts\ECS\Authoring\HeightMeasurer\HeightMeasureAreaAuthoring.cs" />
     <Compile Include="Assets\1. Scripts\zOLD\Components\MovementComponent.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Authoring\Scoring\ScoreAuthoring.cs" />
     <Compile Include="Assets\1. Scripts\zOLD\Authoring\Bakers\CubeSpawnerBaker.cs" />
     <Compile Include="Assets\1. Scripts\Utility\ECS\RaycastHelper.cs" />
     <Compile Include="Assets\1. Scripts\zOLD\Components\CubeSpawnerComponent.cs" />
+    <Compile Include="Assets\1. Scripts\Gameplay\Enums\MultiplierName.cs" />
+    <Compile Include="Assets\1. Scripts\ECS\Components\Scoring\HeightMeasurer\HeightMeasureAreaComponent.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Components\DragNDrop\Tags\DraggableTag.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Systems\DraggingSystem.cs" />
     <Compile Include="Assets\1. Scripts\General\UI\UIFunctionality.cs" />

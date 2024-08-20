@@ -17,7 +17,7 @@ namespace ECS.Systems
 		{
 			state.RequireForUpdate<EndSimulationEntityCommandBufferSystem.Singleton>();
 			
-			startSimulatingQuery = state.GetEntityQuery(typeof(ShouldStartSimulatingTag));
+			startSimulatingQuery = state.GetEntityQuery(ComponentType.ReadWrite<ShouldStartSimulatingTag>());
 			
 			state.RequireForUpdate<ShouldStartSimulatingTag>();
 		}
