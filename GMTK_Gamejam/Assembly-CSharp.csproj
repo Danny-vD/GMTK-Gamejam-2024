@@ -77,21 +77,25 @@
     <Compile Include="Assets\1. Scripts\ECS\Authoring\ClipboardAuthoring.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Authoring\Scoring\ScoreAuthoring.cs" />
     <Compile Include="Assets\1. Scripts\zOLD\Authoring\Bakers\CubeSpawnerBaker.cs" />
+    <Compile Include="Assets\1. Scripts\Audio\SFXAudioPlayer.cs" />
     <Compile Include="Assets\1. Scripts\Utility\ECS\RaycastHelper.cs" />
     <Compile Include="Assets\1. Scripts\zOLD\Components\CubeSpawnerComponent.cs" />
     <Compile Include="Assets\1. Scripts\Gameplay\Enums\MultiplierName.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Components\Scoring\HeightMeasurer\HeightReachedComponent.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Components\DragNDrop\ShouldMoveBackTowardsOriginalPositionComponent.cs" />
-    <Compile Include="Assets\1. Scripts\ECS\Components\Scoring\HeightMeasurer\Tags\ShouldMeasureHeight.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Components\Scoring\HeightMeasurer\HeightMeasureAreaComponent.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Components\DragNDrop\Tags\DraggableTag.cs" />
+    <Compile Include="Assets\1. Scripts\Gameplay\Events\DraggingEvents.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Systems\DraggingSystem.cs" />
     <Compile Include="Assets\1. Scripts\General\UI\UIFunctionality.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Systems\MoveFallenShapesBackSystem.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Components\PhysicsSimulation\Tags\ShouldStopSimulatingTag.cs" />
+    <Compile Include="Assets\1. Scripts\Gameplay\Events\HeightReachedEvent.cs" />
+    <Compile Include="Assets\1. Scripts\Gameplay\HeightMeasurement\ReadyButton.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Systems\EnablePhysicsSystem.cs" />
     <Compile Include="Assets\1. Scripts\zOLD\Systems\CubeSpawnerSystem.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Components\DragNDrop\Tags\IsDraggedTag.cs" />
+    <Compile Include="Assets\1. Scripts\ECS\Components\Scoring\HeightMeasurer\Tags\ShouldMeasureHeightComponent.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Authoring\ShapeAuthoring.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Systems\DisablePhysicsSystem.cs" />
     <Compile Include="Assets\1. Scripts\General\DebugInfo\UI\DebugTextManager.cs" />
@@ -480,9 +484,6 @@
     </Reference>
     <Reference Include="VDUnityFramework">
       <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Assets\VDFramework\VDUnityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-      <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\PackageCache\com.unity.visualscripting\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Cecil">
       <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\PackageCache\com.unity.nuget.mono-cecil\Mono.Cecil.dll</HintPath>
@@ -940,9 +941,6 @@
     <Reference Include="Unity.Physics">
       <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.Physics.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Core">
-      <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Config.Runtime">
       <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Config.Runtime.dll</HintPath>
     </Reference>
@@ -964,11 +962,8 @@
     <Reference Include="Unity.Profiling.Core">
       <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.Profiling.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Shared.Editor">
-      <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Core.Editor">
-      <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
+    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+      <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.AI.Navigation.Updater">
       <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.AI.Navigation.Updater.dll</HintPath>
@@ -979,14 +974,8 @@
     <Reference Include="Unity.Entities.Graphics.Editor">
       <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.Entities.Graphics.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-      <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Entities.Build">
       <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.Entities.Build.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Flow.Editor">
-      <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Transforms">
       <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.Transforms.dll</HintPath>
@@ -999,12 +988,6 @@
     </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
       <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
-      <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.State.Editor">
-      <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.AI.Navigation.Editor">
       <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.dll</HintPath>
@@ -1020,9 +1003,6 @@
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Runtime">
       <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.State">
-      <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
       <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
@@ -1062,9 +1042,6 @@
     </Reference>
     <Reference Include="Unity.Entities">
       <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.Entities.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Flow">
-      <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Runtime">
       <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>

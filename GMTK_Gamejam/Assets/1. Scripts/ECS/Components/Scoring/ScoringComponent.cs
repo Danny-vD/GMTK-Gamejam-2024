@@ -1,5 +1,4 @@
-﻿using System.ComponentModel;
-using Unity.Entities;
+﻿using Unity.Entities;
 
 namespace ECS.Components.Scoring
 {

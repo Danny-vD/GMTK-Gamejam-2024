@@ -2,9 +2,6 @@
 using ECS.Components.DragNDrop.Tags;
 using ECS.Components.PhysicsSimulation.Tags;
 using Unity.Entities;
-using Unity.Mathematics;
-using Unity.Physics;
-using Unity.Physics.Aspects;
 using UnityEngine;
 
 namespace ECS.Authoring

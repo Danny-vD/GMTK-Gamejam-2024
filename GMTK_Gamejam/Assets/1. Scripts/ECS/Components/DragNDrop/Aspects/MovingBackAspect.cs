@@ -1,5 +1,4 @@
-﻿using ECS.Components.DragNDrop.Tags;
-using Unity.Entities;
+﻿using Unity.Entities;
 using Unity.Transforms;
 
 namespace ECS.Components.DragNDrop.Aspects

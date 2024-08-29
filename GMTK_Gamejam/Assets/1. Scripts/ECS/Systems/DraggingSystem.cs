@@ -1,6 +1,4 @@
 ﻿using ECS.Components.DragNDrop.Tags;
-using ECS.Systems.Jobs;
-using Unity.Burst;
 using Unity.Collections;
 using Unity.Entities;
 using Unity.Mathematics;
@@ -29,8 +27,15 @@ namespace ECS.Systems
 			
 			EntityCommandBuffer ecb = new EntityCommandBuffer(Allocator.Temp);
 			
-			foreach (Entity draggedEntity in draggedEntityQuery.ToEntityArray(Allocator.Temp))
+			foreach (Entity draggdEntity in draggedEntityQuery.ToEntityArray(Allocator.Temp))
 			{
+				Entity draggedEntity = draggdEntity;
+				
+				if (EntityManager.HasComponent<Parent>(draggedEntity))
+				{
+					draggedEntity = EntityManager.GetComponentData<Parent>(draggedEntity).Value;
+				}
+				
 				LocalTransform localTransform = EntityManager.GetComponentData<LocalTransform>(draggedEntity);
 
 				float scrollDelta = Input.mouseScrollDelta.y;

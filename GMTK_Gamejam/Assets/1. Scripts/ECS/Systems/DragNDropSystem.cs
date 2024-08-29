@@ -1,6 +1,8 @@
 ﻿using ECS.Components.DragNDrop;
 using ECS.Components.DragNDrop.Tags;
 using ECS.Components.PhysicsSimulation.Tags;
+using ECS.Components.Scoring.HeightMeasurer.Tags;
+using Gameplay.Events;
 using Unity.Collections;
 using Unity.Entities;
 using Unity.Mathematics;
@@ -8,6 +10,7 @@ using Unity.Physics;
 using Unity.Transforms;
 using UnityEngine;
 using Utility.ECS;
+using VDFramework.EventSystem;
 using Ray = UnityEngine.Ray;
 using RaycastHit = Unity.Physics.RaycastHit;
 
@@ -32,12 +35,19 @@ namespace ECS.Systems
 
 		protected override void OnUpdate()
 		{
+			bool disallowDragging = SystemAPI.HasSingleton<ShouldMeasureHeightComponent>(); // Disable the dragNDrop when the height measuring is about to take place (to prevent cheating)
+
+			if (!isDragging && disallowDragging)
+			{
+				return;
+			}
+			
 			EndSimulationEntityCommandBufferSystem.Singleton entityCommandBufferSingleton = SystemAPI.GetSingleton<EndSimulationEntityCommandBufferSystem.Singleton>();
 			EntityCommandBuffer ecb = entityCommandBufferSingleton.CreateCommandBuffer(World.Unmanaged);
 
 			if (isDragging) // NOTE: technically this boolean is not needed
 			{
-				if (Input.GetMouseButtonUp(0))
+				if (Input.GetMouseButtonUp(0) || disallowDragging)
 				{
 					EntityQuery draggedEntities = GetEntityQuery(typeof(IsDraggedTag));
 					
@@ -58,6 +68,7 @@ namespace ECS.Systems
 					ecb.RemoveComponent<IsDraggedTag>(draggedEntities, EntityQueryCaptureMode.AtRecord);
 
 					isDragging = false;
+					EventManager.RaiseEvent(new StopDraggingEvent());
 				}
 			}
 			else
@@ -78,6 +89,7 @@ namespace ECS.Systems
 							ecb.AddComponent<IsDraggedTag>(hit.Entity);
 
 							isDragging = true;
+							EventManager.RaiseEvent(new DraggingEvents());
 						}
 
 						if (EntityManager.HasComponent<ShouldMoveBackTowardsOriginalPositionComponent>(hit.Entity)) // Make sure the entity does not move back where it came from if it was doing that

@@ -1,10 +1,7 @@
 ﻿using ECS.Components;
 using ECS.Systems.Jobs;
 using Unity.Burst;
-using Unity.Collections;
 using Unity.Entities;
-using Unity.Mathematics;
-using Unity.Transforms;
 
 namespace ECS.Systems
 {
