@@ -10787,7 +10787,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2333328cb99e47ac9e5343782352f55a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTimeBeforeScore: 2
+  waitTimeBeforeScore: 4
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
