@@ -2,12 +2,14 @@
 using Unity.Collections;
 using Unity.Entities;
 using Unity.Mathematics;
+using Unity.Physics.Aspects;
+using Unity.Physics.Systems;
 using Unity.Transforms;
 using UnityEngine;
 
 namespace ECS.Systems
 {
-	[RequireMatchingQueriesForUpdate, UpdateAfter(typeof(DragNDropSystem))]
+	[RequireMatchingQueriesForUpdate, UpdateInGroup(typeof(BeforePhysicsSystemGroup))]
 	public partial class DraggingSystem : SystemBase
 	{
 		private EntityQuery draggedEntityQuery;
@@ -25,7 +27,7 @@ namespace ECS.Systems
 		{
 			float3 mouseWorldPosition = maincamera.ScreenToWorldPoint(Input.mousePosition);
 			
-			EntityCommandBuffer ecb = new EntityCommandBuffer(Allocator.Temp);
+			//EntityCommandBuffer ecb = new EntityCommandBuffer(Allocator.Temp);
 			
 			foreach (Entity draggdEntity in draggedEntityQuery.ToEntityArray(Allocator.Temp))
 			{
@@ -35,7 +37,8 @@ namespace ECS.Systems
 				{
 					draggedEntity = EntityManager.GetComponentData<Parent>(draggedEntity).Value;
 				}
-				
+
+				RigidBodyAspect rigidBodyAspect = EntityManager.GetAspect<RigidBodyAspect>(draggdEntity);
 				LocalTransform localTransform = EntityManager.GetComponentData<LocalTransform>(draggedEntity);
 
 				float scrollDelta = Input.mouseScrollDelta.y;
@@ -46,14 +49,16 @@ namespace ECS.Systems
 				}
 				
 				float zPosition = localTransform.Position.z;
-				mouseWorldPosition.z = zPosition;
+				mouseWorldPosition.z = 0;
+
+				rigidBodyAspect.Rotation = localTransform.Rotation;
+				rigidBodyAspect.Position = mouseWorldPosition;
+				//localTransform.Position  = mouseWorldPosition;
 				
-				localTransform.Position = mouseWorldPosition;
-				
-				ecb.SetComponent(draggedEntity, localTransform);
+				//ecb.SetComponent(draggedEntity, localTransform);
 			}
 			
-			ecb.Playback(EntityManager);
+			//ecb.Playback(EntityManager);
 		}
 	}
 }
