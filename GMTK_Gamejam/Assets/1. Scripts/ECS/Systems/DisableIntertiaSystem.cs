@@ -6,10 +6,11 @@ using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Physics;
 using Unity.Physics.Aspects;
+using Unity.Physics.Systems;
 
 namespace ECS.Systems
 {
-	[BurstCompile, RequireMatchingQueriesForUpdate, UpdateInGroup(typeof(PresentationSystemGroup))]
+	[BurstCompile, RequireMatchingQueriesForUpdate, UpdateInGroup(typeof(BeforePhysicsSystemGroup))]
 	public partial struct DisableIntertiaSystem : ISystem
 	{
 		private EntityQuery disableIntertiaQuery;

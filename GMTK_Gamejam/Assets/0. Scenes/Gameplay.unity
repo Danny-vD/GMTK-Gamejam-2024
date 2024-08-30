@@ -994,7 +994,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 213946956}
-  - component: {fileID: 213946957}
   m_Layer: 0
   m_Name: Lower Good Area
   m_TagString: Untagged
@@ -1017,22 +1016,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 923454571}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &213946957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 213946955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44c66e35f0f8441ca62c44fefad94b5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RaycastDirection: {x: -1, y: 0, z: 0}
-  ScoringMultiplier: 2
-  AreaRadius: 0.23
-  RaycastDistance: 6
 --- !u!1 &233566413
 GameObject:
   m_ObjectHideFlags: 0
@@ -3524,7 +3507,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 742235595}
-  - component: {fileID: 742235596}
   m_Layer: 0
   m_Name: Upper Good Area
   m_TagString: Untagged
@@ -3547,22 +3529,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 923454571}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &742235596
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 742235594}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44c66e35f0f8441ca62c44fefad94b5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RaycastDirection: {x: -1, y: 0, z: 0}
-  ScoringMultiplier: 2
-  AreaRadius: 0.23
-  RaycastDistance: 6
 --- !u!1 &766124829
 GameObject:
   m_ObjectHideFlags: 0
@@ -4597,6 +4563,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 923454571}
+  - component: {fileID: 923454572}
   m_Layer: 0
   m_Name: graph
   m_TagString: Untagged
@@ -4645,6 +4612,42 @@ Transform:
   - {fileID: 1303309515}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &923454572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923454570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bafd70b0b694d6faa8cc62af90a9059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  raycastPoints:
+  - OriginPoint: {fileID: 1303309515}
+    ScoringMultiplier: 0
+    AreaRadius: 0.2
+  - OriginPoint: {fileID: 2040627192}
+    ScoringMultiplier: 1
+    AreaRadius: 0.2
+  - OriginPoint: {fileID: 213946956}
+    ScoringMultiplier: 2
+    AreaRadius: 0.2
+  - OriginPoint: {fileID: 2129231121}
+    ScoringMultiplier: 3
+    AreaRadius: 0.2
+  - OriginPoint: {fileID: 742235595}
+    ScoringMultiplier: 2
+    AreaRadius: 0.2
+  - OriginPoint: {fileID: 1855141274}
+    ScoringMultiplier: 1
+    AreaRadius: 0.2
+  - OriginPoint: {fileID: 1980706287}
+    ScoringMultiplier: 0
+    AreaRadius: 0.2
+  raycastDirection: {x: -1, y: 0, z: 0}
+  raycastDistance: 6
 --- !u!1 &1005228195
 GameObject:
   m_ObjectHideFlags: 0
@@ -6581,7 +6584,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1303309515}
-  - component: {fileID: 1303309516}
   m_Layer: 0
   m_Name: Lower Fail Area
   m_TagString: Untagged
@@ -6604,22 +6606,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 923454571}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1303309516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1303309514}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44c66e35f0f8441ca62c44fefad94b5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RaycastDirection: {x: -1, y: 0, z: 0}
-  ScoringMultiplier: 0
-  AreaRadius: 0.23
-  RaycastDistance: 6
 --- !u!1 &1340209749
 GameObject:
   m_ObjectHideFlags: 0
@@ -9726,7 +9712,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1855141274}
-  - component: {fileID: 1855141275}
   m_Layer: 0
   m_Name: Upper Okay Area
   m_TagString: Untagged
@@ -9749,22 +9734,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 923454571}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1855141275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1855141273}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44c66e35f0f8441ca62c44fefad94b5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RaycastDirection: {x: -1, y: 0, z: 0}
-  ScoringMultiplier: 1
-  AreaRadius: 0.23
-  RaycastDistance: 6
 --- !u!1 &1872585582
 GameObject:
   m_ObjectHideFlags: 0
@@ -10277,7 +10246,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1980706287}
-  - component: {fileID: 1980706288}
   m_Layer: 0
   m_Name: Upper Fail Area
   m_TagString: Untagged
@@ -10300,22 +10268,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 923454571}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1980706288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1980706286}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44c66e35f0f8441ca62c44fefad94b5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RaycastDirection: {x: -1, y: 0, z: 0}
-  ScoringMultiplier: 0
-  AreaRadius: 0.23
-  RaycastDistance: 6
 --- !u!1 &2017472512
 GameObject:
   m_ObjectHideFlags: 0
@@ -10412,7 +10364,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2040627192}
-  - component: {fileID: 2040627193}
   m_Layer: 0
   m_Name: Lower Okay Area
   m_TagString: Untagged
@@ -10435,22 +10386,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 923454571}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2040627193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2040627191}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44c66e35f0f8441ca62c44fefad94b5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RaycastDirection: {x: -1, y: 0, z: 0}
-  ScoringMultiplier: 1
-  AreaRadius: 0.23
-  RaycastDistance: 6
 --- !u!1 &2090255105
 GameObject:
   m_ObjectHideFlags: 0
@@ -10696,7 +10631,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2129231121}
-  - component: {fileID: 2129231122}
   m_Layer: 0
   m_Name: Perfect Area
   m_TagString: Untagged
@@ -10719,22 +10653,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 923454571}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2129231122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2129231120}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44c66e35f0f8441ca62c44fefad94b5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RaycastDirection: {x: -1, y: 0, z: 0}
-  ScoringMultiplier: 3
-  AreaRadius: 0.23
-  RaycastDistance: 6
 --- !u!1 &2135936290
 GameObject:
   m_ObjectHideFlags: 0

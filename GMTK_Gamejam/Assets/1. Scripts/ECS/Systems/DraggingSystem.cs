@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace ECS.Systems
 {
-	[RequireMatchingQueriesForUpdate, UpdateInGroup(typeof(BeforePhysicsSystemGroup))]
+	[RequireMatchingQueriesForUpdate, UpdateInGroup(typeof(InitializationSystemGroup))] //  BeforePhysicsSystemGroup
 	public partial class DraggingSystem : SystemBase
 	{
 		private EntityQuery draggedEntityQuery;
@@ -45,7 +45,7 @@ namespace ECS.Systems
 
 				if (scrollDelta != 0)
 				{
-					localTransform = localTransform.RotateZ(math.sign(scrollDelta) * 45 * SystemAPI.Time.DeltaTime);
+					localTransform = localTransform.RotateZ(math.sign(scrollDelta) * 45 * SystemAPI.Time.DeltaTime); // TODO: reading input in a fixed time step does not work optimally, move to a different system
 				}
 				
 				float zPosition = localTransform.Position.z;

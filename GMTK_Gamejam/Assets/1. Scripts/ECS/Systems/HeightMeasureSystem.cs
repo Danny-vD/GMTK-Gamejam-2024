@@ -3,6 +3,7 @@ using ECS.Components.Scoring.HeightMeasurer;
 using ECS.Components.Scoring.HeightMeasurer.Tags;
 using Gameplay.Enums;
 using Gameplay.Events;
+using Gameplay.Structs;
 using Unity.Burst;
 using Unity.Collections;
 using Unity.Entities;
@@ -17,7 +18,7 @@ namespace ECS.Systems
 	[BurstCompile]
 	public partial struct HeightMeasureSystem : ISystem
 	{
-		private EntityQuery heightMeasureAreas;
+		private EntityQuery raycastDataQuery;
 
 		private EntityQuery shouldMeasureHeightQuery;
 
@@ -30,7 +31,7 @@ namespace ECS.Systems
 
 			shouldMeasureHeightQuery = state.GetEntityQuery(ComponentType.ReadWrite<ShouldMeasureHeightComponent>());
 
-			heightMeasureAreas = state.GetEntityQuery(ComponentType.ReadOnly<HeightMeasureAreaComponent>());
+			raycastDataQuery = state.GetEntityQuery(ComponentType.ReadOnly<HeightMeasurementAreasManagerComponent>());
 		}
 
 		public void OnUpdate(ref SystemState state)
@@ -61,28 +62,24 @@ namespace ECS.Systems
 		private MultiplierName GetHighestHeight(ref SystemState state)
 		{
 			MultiplierName highestMultiplierReached = MultiplierName.Fail;
-		
+
 			CollisionWorld collisionWorld = SystemAPI.GetSingleton<PhysicsWorldSingleton>().CollisionWorld;
-			
-			NativeArray<Entity> heightMeasureAreaPoints = heightMeasureAreas.ToEntityArray(Allocator.Temp);
-			heightMeasureAreaPoints.Sort<Entity, IComparer<Entity>>(new HeightMeasureComparer() { EntityManager = state.EntityManager });
-		
-			foreach (Entity entity in heightMeasureAreaPoints)
+
+			HeightMeasurementAreasManagerComponent heightMeasurementAreasManager = raycastDataQuery.GetSingleton<HeightMeasurementAreasManagerComponent>();
+
+			foreach (ScoreAreaRaycastDataECS raycastData in heightMeasurementAreasManager.RaycastPoints)
 			{
-				HeightMeasureAreaComponent heightMeasureAreaComponent = state.EntityManager.GetComponentData<HeightMeasureAreaComponent>(entity);
-				LocalTransform transform = state.EntityManager.GetComponentData<LocalTransform>(entity);
-		
-				if (RaycastHelper.SphereCast(collisionWorld, transform.Position, heightMeasureAreaComponent.AreaRadius, heightMeasureAreaComponent.RaycastDirection, heightMeasureAreaComponent.RaycastDistance,
+				if (RaycastHelper.SphereCast(collisionWorld, raycastData.OriginPoint, raycastData.AreaRadius, heightMeasurementAreasManager.RaycastDirection, heightMeasurementAreasManager.RaycastDistance,
 						CollisionFilter.Default, QueryInteraction.IgnoreTriggers))
 				{
-					highestMultiplierReached = heightMeasureAreaComponent.ScoringMultiplier;
+					highestMultiplierReached = raycastData.ScoringMultiplier;
 				}
 				else
 				{
 					break;
 				}
 			}
-		
+
 			return highestMultiplierReached;
 		}
 
