@@ -8,8 +8,6 @@ namespace ECS.Authoring.Scoring
 	public class ScoreAuthoring : MonoBehaviour
 	{
 		public int ShapePoints;
-		
-		public TMP_Text ShapePointsLabel; // TODO: Not allowed (scene mismatch)... check UI video 
 
 		public class ScoreAuthoringBaker : Baker<ScoreAuthoring>
 		{

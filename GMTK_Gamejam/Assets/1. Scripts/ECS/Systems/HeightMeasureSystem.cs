@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using ECS.Components.Scoring.HeightMeasurer;
 using ECS.Components.Scoring.HeightMeasurer.Tags;
+using ECS.Components.Scoring.Tags;
 using Gameplay.Enums;
 using Gameplay.Events;
 using Gameplay.Structs;
@@ -54,6 +55,7 @@ namespace ECS.Systems
 			EventManager.RaiseEvent(new HeightReachedEvent(highestMultiplierReached));
 
 			ecb.AddComponent(shouldMeasureHeightEntity, new HeightReachedComponent() { HighestMultiplierReached = highestMultiplierReached });
+			ecb.AddComponent<ShouldCalculateScoreTag>(shouldMeasureHeightEntity);
 			ecb.RemoveComponent<ShouldMeasureHeightComponent>(shouldMeasureHeightEntity);
 		}
 
