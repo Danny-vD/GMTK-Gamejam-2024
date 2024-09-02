@@ -876,9 +876,6 @@
     <Reference Include="Unity.Searcher.Editor">
       <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.AI.Navigation">
-      <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.AI.Navigation.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
     </Reference>
@@ -966,9 +963,6 @@
     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
       <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.AI.Navigation.Updater">
-      <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.AI.Navigation.Updater.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Mathematics.Extensions">
       <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.Mathematics.Extensions.dll</HintPath>
     </Reference>
@@ -990,9 +984,6 @@
     <Reference Include="Unity.PlasticSCM.Editor">
       <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.AI.Navigation.Editor">
-      <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Mathematics">
       <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
     </Reference>
@@ -1007,9 +998,6 @@
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
       <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.AI.Navigation.Editor.ConversionSystem">
-      <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.ConversionSystem.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Entities.Graphics">
       <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.Entities.Graphics.dll</HintPath>

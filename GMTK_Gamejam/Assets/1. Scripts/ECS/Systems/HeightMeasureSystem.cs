@@ -5,7 +5,6 @@ using Gameplay.Enums;
 using Gameplay.Events;
 using Gameplay.Structs;
 using Unity.Burst;
-using Unity.Collections;
 using Unity.Entities;
 using Unity.Physics;
 using Unity.Transforms;
@@ -53,7 +52,6 @@ namespace ECS.Systems
 			MultiplierName highestMultiplierReached = GetHighestHeight(ref state);
 
 			EventManager.RaiseEvent(new HeightReachedEvent(highestMultiplierReached));
-			Debug.Log(highestMultiplierReached);
 
 			ecb.AddComponent(shouldMeasureHeightEntity, new HeightReachedComponent() { HighestMultiplierReached = highestMultiplierReached });
 			ecb.RemoveComponent<ShouldMeasureHeightComponent>(shouldMeasureHeightEntity);
