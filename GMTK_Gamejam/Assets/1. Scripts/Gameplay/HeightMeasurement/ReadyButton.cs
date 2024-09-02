@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using ECS.Components.Scoring.HeightMeasurer.Tags;
+using Gameplay.Enums;
 using Gameplay.Events;
 using Unity.Entities;
 using UnityEngine;
@@ -21,7 +22,7 @@ namespace Gameplay.HeightMeasurement
 		{
 			button = GetComponent<Button>();
 
-			AddListenerToButton();
+			AddListenerToButton(new HeightReachedEvent((MultiplierName)(-1)));
 		}
 
 		private void OnEnable()
@@ -39,8 +40,10 @@ namespace Gameplay.HeightMeasurement
 			entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
 		}
 
-		private void AddListenerToButton()
+		private void AddListenerToButton(HeightReachedEvent heightReachedEvent)
 		{
+			Debug.Log(heightReachedEvent.HighestMultiplierReached);
+			
 			button.onClick.AddListener(StartMeasuringHeight);
 		}
 

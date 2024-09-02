@@ -93,6 +93,7 @@
     <Compile Include="Assets\1. Scripts\ECS\Components\PhysicsSimulation\Tags\ShouldStopSimulatingTag.cs" />
     <Compile Include="Assets\1. Scripts\Gameplay\Events\HeightReachedEvent.cs" />
     <Compile Include="Assets\1. Scripts\Gameplay\HeightMeasurement\ReadyButton.cs" />
+    <Compile Include="Assets\1. Scripts\Gameplay\HeightMeasurement\GraphPositionManager.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Systems\EnablePhysicsSystem.cs" />
     <Compile Include="Assets\1. Scripts\zOLD\Systems\CubeSpawnerSystem.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Components\DragNDrop\Tags\IsDraggedTag.cs" />

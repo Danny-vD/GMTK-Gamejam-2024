@@ -20,7 +20,24 @@ namespace Gameplay.HeightMeasurement
 		
 		private EntityManager entityManager;
 		private Entity heightMeasurementAreasManagerEntity;
+
+		private GraphPositionManager graphPositionManager;
 		
+		private void Awake()
+		{
+			graphPositionManager = GetComponent<GraphPositionManager>();
+		}
+
+		private void OnEnable()
+		{
+			graphPositionManager.OnChangedPosition += SetPointsData;
+		}
+		
+		private void OnDisable()
+		{
+			graphPositionManager.OnChangedPosition -= SetPointsData;
+		}
+
 		private void Start()
 		{
 			entityManager                       = World.DefaultGameObjectInjectionWorld.EntityManager;
