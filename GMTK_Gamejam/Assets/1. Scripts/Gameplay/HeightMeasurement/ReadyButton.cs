@@ -42,8 +42,6 @@ namespace Gameplay.HeightMeasurement
 
 		private void AddListenerToButton(HeightReachedEvent heightReachedEvent)
 		{
-			Debug.Log(heightReachedEvent.HighestMultiplierReached);
-			
 			button.onClick.AddListener(StartMeasuringHeight);
 		}
 

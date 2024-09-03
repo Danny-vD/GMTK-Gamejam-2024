@@ -12,7 +12,7 @@ using UnityEngine;
 
 namespace ECS.Systems
 {
-	[BurstCompile]
+	[BurstCompile, UpdateAfter(typeof(HeightMeasureSystem))]
 	public partial struct ScoreSystem : ISystem
 	{
 		private EntityQuery viableScoreQuery;
@@ -34,7 +34,7 @@ namespace ECS.Systems
 			scoringComponentLookup = state.GetComponentLookup<ScoringComponent>(true);
 		}
 
-		//[BurstCompile]
+		[BurstCompile]
 		public void OnUpdate(ref SystemState state)
 		{
 			scoringComponentLookup.Update(ref state);
@@ -65,7 +65,6 @@ namespace ECS.Systems
 			Entity singletonEntity = SystemAPI.GetSingletonEntity<ShouldCalculateScoreTag>();
 			ecb.RemoveComponent<ShouldCalculateScoreTag>(singletonEntity);
 			ecb.AddComponent(singletonEntity, new ScoreCalculatedComponent() { Score = score, Multiplier = multiplier, FinalScore = score * multiplier });
-			Debug.Log($"score: {score} * {multiplier} = {score * multiplier}");
 		}
 	}
 }

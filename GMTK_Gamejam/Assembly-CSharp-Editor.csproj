@@ -943,11 +943,11 @@
     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
       <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Mathematics.Extensions">
-      <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.Mathematics.Extensions.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Entities.Graphics.Editor">
       <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.Entities.Graphics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics.Extensions">
+      <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.Mathematics.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Entities.Build">
       <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.Entities.Build.dll</HintPath>
@@ -982,11 +982,11 @@
     <Reference Include="Unity.Entities.Graphics">
       <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.Entities.Graphics.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Burst.Editor">
       <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro.Editor">
+      <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Entities.Hybrid.HybridComponents">
       <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.Entities.Hybrid.HybridComponents.dll</HintPath>
@@ -1003,11 +1003,11 @@
     <Reference Include="Unity.Scenes.Editor">
       <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.Scenes.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Entities.Editor.Properties">
-      <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.Entities.Editor.Properties.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Entities.UI">
       <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.Entities.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Entities.Editor.Properties">
+      <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.Entities.Editor.Properties.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Entities">
       <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.Entities.dll</HintPath>

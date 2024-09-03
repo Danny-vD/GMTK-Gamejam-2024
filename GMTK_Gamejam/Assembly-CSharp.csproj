@@ -73,8 +73,10 @@
     <Compile Include="Assets\1. Scripts\zOLD\Components\MovementComponent.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Components\PhysicsSimulation\Tags\ShouldDisableInertiaXYTag.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Authoring\PlatformAuthoring.cs" />
+    <Compile Include="Assets\1. Scripts\Gameplay\ResultsScreen\MoveAllShapesBack.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Authoring\ClipboardAuthoring.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Authoring\Scoring\ScoreAuthoring.cs" />
+    <Compile Include="Assets\1. Scripts\Gameplay\ResultsScreen\ResultsManager.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Authoring\Scoring\MultiplierDetailsAuthoring.cs" />
     <Compile Include="Assets\1. Scripts\zOLD\Authoring\Bakers\CubeSpawnerBaker.cs" />
     <Compile Include="Assets\1. Scripts\SerializableDictionaryPackage\SerializableDictionary\SerializableEnumDictionary.cs" />
@@ -83,6 +85,7 @@
     <Compile Include="Assets\1. Scripts\Utility\ECS\RaycastHelper.cs" />
     <Compile Include="Assets\1. Scripts\zOLD\Components\CubeSpawnerComponent.cs" />
     <Compile Include="Assets\1. Scripts\Gameplay\Enums\MultiplierName.cs" />
+    <Compile Include="Assets\1. Scripts\Gameplay\ResultsScreen\ResultTimerManager.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Components\Scoring\HeightMeasurer\HeightReachedComponent.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Components\DragNDrop\ShouldMoveBackTowardsOriginalPositionComponent.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Components\Scoring\Tags\ShouldCalculateScoreTag.cs" />
@@ -98,6 +101,7 @@
     <Compile Include="Assets\1. Scripts\ECS\Components\PhysicsSimulation\Tags\ShouldStopSimulatingTag.cs" />
     <Compile Include="Assets\1. Scripts\Gameplay\Events\HeightReachedEvent.cs" />
     <Compile Include="Assets\1. Scripts\Gameplay\HeightMeasurement\ReadyButton.cs" />
+    <Compile Include="Assets\1. Scripts\Gameplay\ResultsScreen\ScoreManager.cs" />
     <Compile Include="Assets\1. Scripts\Gameplay\HeightMeasurement\GraphPositionManager.cs" />
     <Compile Include="Assets\1. Scripts\SerializableDictionaryPackage\SerializableDictionary\SerializableDictionary.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Systems\EnablePhysicsSystem.cs" />
@@ -109,7 +113,6 @@
     <Compile Include="Assets\1. Scripts\ECS\Systems\DisablePhysicsSystem.cs" />
     <Compile Include="Assets\1. Scripts\General\DebugInfo\UI\DebugTextManager.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Components\DragNDrop\Aspects\MovingBackAspect.cs" />
-    <Compile Include="Assets\1. Scripts\ScoreManager.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Components\Scoring\ScoringComponent.cs" />
     <Compile Include="Assets\1. Scripts\ECS\Components\PhysicsSimulation\Tags\ShouldStartSimulatingTag.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -971,11 +974,11 @@
     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
       <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Mathematics.Extensions">
-      <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.Mathematics.Extensions.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Entities.Graphics.Editor">
       <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.Entities.Graphics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics.Extensions">
+      <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.Mathematics.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Entities.Build">
       <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.Entities.Build.dll</HintPath>
@@ -1010,11 +1013,11 @@
     <Reference Include="Unity.Entities.Graphics">
       <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.Entities.Graphics.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Burst.Editor">
       <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro.Editor">
+      <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Entities.Hybrid.HybridComponents">
       <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.Entities.Hybrid.HybridComponents.dll</HintPath>
@@ -1031,11 +1034,11 @@
     <Reference Include="Unity.Scenes.Editor">
       <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.Scenes.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Entities.Editor.Properties">
-      <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.Entities.Editor.Properties.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Entities.UI">
       <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.Entities.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Entities.Editor.Properties">
+      <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.Entities.Editor.Properties.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Entities">
       <HintPath>D:\Projects\GMTK-Gamejam-2024\GMTK_Gamejam\Library\ScriptAssemblies\Unity.Entities.dll</HintPath>

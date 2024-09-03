@@ -11,9 +11,14 @@ namespace Gameplay.HeightMeasurement
 
 		[SerializeField]
 		private Transform highestGraphPosition;
-		
+
 		[SerializeField]
 		private Transform lowestGraphPosition;
+
+		private void Start()
+		{
+			SetToRandomPosition();
+		}
 
 		[ContextMenu("Set to random position")]
 		public void SetToRandomPosition()
@@ -22,7 +27,7 @@ namespace Gameplay.HeightMeasurement
 			Vector3 lowerBound = lowestGraphPosition.position;
 
 			CachedTransform.position = Vector3.LerpUnclamped(lowerBound, higherBound, Random.value);
-			
+
 			OnChangedPosition.Invoke();
 		}
 	}
