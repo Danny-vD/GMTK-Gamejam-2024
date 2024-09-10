@@ -18,12 +18,10 @@ namespace ECS.Systems
 		private EntityQuery viableScoreQuery;
 		private ComponentLookup<ScoringComponent> scoringComponentLookup;
 
-		[BurstCompile]
 		public void OnCreate(ref SystemState state)
 		{
 			state.RequireForUpdate<EndSimulationEntityCommandBufferSystem.Singleton>();
 
-			// ReSharper disable once Unity.BurstFunctionSignatureContainsManagedTypes
 			viableScoreQuery = state.GetEntityQuery(ComponentType.ReadOnly<ScoringComponent>(), ComponentType.Exclude<Simulate>(), ComponentType.ReadOnly<DraggableTag>(), ComponentType.Exclude<IsDraggedTag>());
 			state.RequireForUpdate(viableScoreQuery);
 

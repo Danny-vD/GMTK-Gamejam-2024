@@ -21,13 +21,13 @@ namespace Audio
 
 		private void OnEnable()
 		{
-			DraggingEvents.AddListener(PlayStartDragging);
+			StartDraggingEvent.AddListener(PlayStartDragging);
 			StopDraggingEvent.AddListener(PlayStopDragging);
 		}
 
 		private void OnDisable()
 		{
-			DraggingEvents.RemoveListener(PlayStartDragging);
+			StartDraggingEvent.RemoveListener(PlayStartDragging);
 			StopDraggingEvent.RemoveListener(PlayStopDragging);
 		}
 

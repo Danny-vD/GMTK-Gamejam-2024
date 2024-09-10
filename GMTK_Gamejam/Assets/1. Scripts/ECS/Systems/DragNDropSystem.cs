@@ -23,9 +23,13 @@ namespace ECS.Systems
 		private Camera maincamera;
 		private bool isDragging = false;
 
+		private EntityQuery draggedEntityQuery;
+
 		protected override void OnCreate()
 		{
 			maincamera = Camera.main;
+
+			draggedEntityQuery = GetEntityQuery(ComponentType.ReadOnly<IsDraggedTag>());
 		}
 
 		protected override void OnStartRunning()
@@ -49,9 +53,7 @@ namespace ECS.Systems
 			{
 				if (Input.GetMouseButtonUp(0) || disallowDragging)
 				{
-					EntityQuery draggedEntities = GetEntityQuery(typeof(IsDraggedTag));
-					
-					foreach (Entity entity in draggedEntities.ToEntityArray(Allocator.Temp))
+					foreach (Entity entity in draggedEntityQuery.ToEntityArray(Allocator.Temp))
 					{
 						LocalTransform localTransform = EntityManager.GetComponentData<LocalTransform>(entity);
 
@@ -65,7 +67,7 @@ namespace ECS.Systems
 						}
 					}
 					
-					ecb.RemoveComponent<IsDraggedTag>(draggedEntities, EntityQueryCaptureMode.AtRecord);
+					ecb.RemoveComponent<IsDraggedTag>(draggedEntityQuery, EntityQueryCaptureMode.AtRecord);
 
 					isDragging = false;
 					EventManager.RaiseEvent(new StopDraggingEvent());
@@ -75,7 +77,7 @@ namespace ECS.Systems
 			{
 				if (Input.GetMouseButtonDown(0))
 				{
-					Ray ray = maincamera.ScreenPointToRay(Input.mousePosition);
+					Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 					float3 rayStart = ray.origin;
 					float3 rayEnd = ray.GetPoint(50);
 
@@ -89,7 +91,7 @@ namespace ECS.Systems
 							ecb.AddComponent<IsDraggedTag>(hit.Entity);
 
 							isDragging = true;
-							EventManager.RaiseEvent(new DraggingEvents());
+							EventManager.RaiseEvent(new StartDraggingEvent());
 						}
 
 						if (EntityManager.HasComponent<ShouldMoveBackTowardsOriginalPositionComponent>(hit.Entity)) // Make sure the entity does not move back where it came from if it was doing that
@@ -103,12 +105,10 @@ namespace ECS.Systems
 
 		private bool IsWithinClipboardArea(float3 position)
 		{
-			Entity singletonEntity = SystemAPI.GetSingletonEntity<ClipboardComponent>();
+			ClipboardComponent clipboardComponent = SystemAPI.GetSingleton<ClipboardComponent>();
 
-			RefRO<ClipboardComponent> clipboardComponentRO = SystemAPI.GetComponentRO<ClipboardComponent>(singletonEntity);
-
-			float3 topleft = clipboardComponentRO.ValueRO.TopLeftCorner;
-			float3 bottomRight = clipboardComponentRO.ValueRO.BottomRightCorner;
+			float3 topleft = clipboardComponent.TopLeftCorner;
+			float3 bottomRight = clipboardComponent.BottomRightCorner;
 			
 			return position.y <= topleft.y && position.y >= bottomRight.y && position.x >= topleft.x && position.x <= bottomRight.x;
 		}

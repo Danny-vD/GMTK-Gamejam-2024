@@ -2,7 +2,7 @@
 
 namespace Gameplay.Events
 {
-	public class DraggingEvents : VDEvent<DraggingEvents>
+	public class StartDraggingEvent : VDEvent<StartDraggingEvent>
 	{
 	}
 

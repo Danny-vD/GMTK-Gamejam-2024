@@ -25,7 +25,7 @@ namespace ECS.Systems
 
 		protected override void OnUpdate()
 		{
-			float3 mouseWorldPosition = maincamera.ScreenToWorldPoint(Input.mousePosition);
+			float3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			
 			//EntityCommandBuffer ecb = new EntityCommandBuffer(Allocator.Temp);
 			
